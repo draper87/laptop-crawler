@@ -117,5 +117,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="testami-master" />
+    <orderEntry type="module" module-name="theme-test" />
   </component>
 </module>

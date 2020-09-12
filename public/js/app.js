@@ -35300,14 +35300,15 @@ var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebar
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 $(document).ready(function () {
+  // chiamata Ajax quando premo il tasto Invia
   $('#bottone').click(function () {
     chiamaLaptops();
-  });
+  }); // metto in una variabile il valore scelto dall utente della select "video_card"
+
   var videocard;
   $("#videocard").change(function () {
     videocard = $('#videocard').val();
-    console.log(videocard);
-  });
+  }); // funzione che fa chiamata Ajax all mia API su laravel
 
   function chiamaLaptops() {
     $.ajax({
@@ -35323,7 +35324,8 @@ $(document).ready(function () {
         alert('il server non funziona');
       }
     });
-  }
+  } // funzione che usa handlebars per stampare i risultati ottenuti dalla chiamata Ajax
+
 
   function stampaLaptops(dataResponse) {
     $('.lista').html('');

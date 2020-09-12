@@ -19,4 +19,4 @@ Route::get('/', function () {
 
 Route::get('/laptop', 'LaptopController@index');
 
-//Route::get('/laptop/create', 'LaptopController@create');
+

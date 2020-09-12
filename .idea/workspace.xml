@@ -21,6 +21,45 @@
   <component name="ChangeListManager">
     <list default="true" id="246335cc-7650-43ad-a818-7efc98aa85ff" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../../../../MAMP/htdocs/testami-master/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../MAMP/htdocs/testami-master/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/progetto-laptop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/progetto-laptop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/Invia.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Invia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/+/Y/SKmRdUWx1+RBG-KpgYIg" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/+/Y/SKmRdUWx1+RBG-KpgYIg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/2/Z/43TNBNvtOvXajFsfINow" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/2/Z/43TNBNvtOvXajFsfINow" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/9/M/LVB8AP1LYxCO1b8xf+ZA" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/9/M/LVB8AP1LYxCO1b8xf+ZA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/A/1/lW5Ci3HoDwqvbelrrCug" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/A/1/lW5Ci3HoDwqvbelrrCug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/A/V/CPVaaq6gNqKkHSkRFE0A" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/A/V/CPVaaq6gNqKkHSkRFE0A" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/B/G/ynkUqbXnX1a03nDcXHIw" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/B/G/ynkUqbXnX1a03nDcXHIw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/B/T/vC51iaOITic92KVx2Glw" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/B/T/vC51iaOITic92KVx2Glw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/C/N/A1qXFBZHW9OlsPKU8gNg" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/C/N/A1qXFBZHW9OlsPKU8gNg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/D/X/0oz5PYwy1iBDu0scKfKA" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/D/X/0oz5PYwy1iBDu0scKfKA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/E/M/QMySyrtQCo9OUP-ns-Kg" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/E/M/QMySyrtQCo9OUP-ns-Kg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/F/U/TtNQb2213Ge8ySDQ5+LQ" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/F/U/TtNQb2213Ge8ySDQ5+LQ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/G/D/9Kmi3dlM3weprHJJK2oQ" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/G/D/9Kmi3dlM3weprHJJK2oQ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/J/Q/eoTip2MRy-3j-YYMrcLA" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/J/Q/eoTip2MRy-3j-YYMrcLA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/K/M/NReGgG1msaBWj7GNnCDA" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/K/M/NReGgG1msaBWj7GNnCDA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/L/E/EuQJ-pXaCRVPAtydklsg" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/L/E/EuQJ-pXaCRVPAtydklsg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/L/L/icx5kOH7ZUh6-Gh1d+Yg" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/L/L/icx5kOH7ZUh6-Gh1d+Yg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/L/X/bCnp4fjrcdna2OLVoe6g" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/L/X/bCnp4fjrcdna2OLVoe6g" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/M/4/6bX5KOCU9j1cAg-45zeQ" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/M/4/6bX5KOCU9j1cAg-45zeQ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/M/H/jr8aoHuZFB0YtI5R8S-g" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/M/H/jr8aoHuZFB0YtI5R8S-g" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/P/Y/-XO7BVaJinP71fMoLdgg" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/P/Y/-XO7BVaJinP71fMoLdgg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/Q/K/JiYk5BjqmH+hnEBBPHQQ" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/Q/K/JiYk5BjqmH+hnEBBPHQQ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/R/L/gvGKmaHYKJNpcjsN4-CQ" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/R/L/gvGKmaHYKJNpcjsN4-CQ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/R/T/EKWGZrld8Fe-MJxYZq1w" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/R/T/EKWGZrld8Fe-MJxYZq1w" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/S/L/o2fNeUkCsIjRl+16-Dhw" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/S/L/o2fNeUkCsIjRl+16-Dhw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/T/K/UXxktEM5LxucJq2GHmYg" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/T/K/UXxktEM5LxucJq2GHmYg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/Y/3/Jo4GdgAf7ChDOYLMnfCA" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/Y/3/Jo4GdgAf7ChDOYLMnfCA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/Z/C/jmGCDKmhE3XQeEBu3QwA" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/Z/C/jmGCDKmhE3XQeEBu3QwA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/Z/U/6C1GAQ5u0uGoyyE-jMtA" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/Z/U/6C1GAQ5u0uGoyyE-jMtA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Laptop.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Laptop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_192843_create_laptops_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_192843_create_laptops_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +73,12 @@
     </execution>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../../MAMP/htdocs/testami-master" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -44,8 +88,9 @@
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
+    <dismissed value="$PROJECT_DIR$/../theme-test/package.json" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
@@ -162,16 +207,26 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../MAMP/htdocs/testami-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../theme-test" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\storage\app\public" />
-      <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\resources\views\laptop" />
+      <recent name="C:\Users\drape\Desktop\Repo\theme-test\public\js" />
+      <recent name="C:\Users\drape\Desktop\Repo\theme-test\public\css" />
+      <recent name="C:\Users\drape\Desktop\Repo\theme-test\public" />
+      <recent name="C:\Users\drape\Desktop\Repo\theme-test\resources\sass" />
+      <recent name="C:\Users\drape\Desktop\Repo\theme-test\resources" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\drape\Desktop\Repo\theme-test" />
+      <recent name="C:\Users\drape\Desktop\Repo\theme-test\resources" />
     </key>
   </component>
   <component name="RunManager">
@@ -202,7 +257,14 @@
       <workItem from="1599488483203" duration="2736000" />
       <workItem from="1599491251114" duration="415000" />
       <workItem from="1599491681832" duration="45000" />
-      <workItem from="1599569894705" duration="7368000" />
+      <workItem from="1599569894705" duration="10945000" />
+      <workItem from="1599679134715" duration="5898000" />
+      <workItem from="1599685528619" duration="1577000" />
+      <workItem from="1599729183355" duration="47000" />
+      <workItem from="1599814895007" duration="6814000" />
+      <workItem from="1599833464855" duration="6493000" />
+      <workItem from="1599924239158" duration="1330000" />
+      <workItem from="1599925588189" duration="335000" />
     </task>
     <servers />
   </component>
@@ -222,33 +284,45 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="348" y="72" key="#CLI_Interpreters" timestamp="1599925454237">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="348" y="72" key="#CLI_Interpreters/0.0.1536.834@0.0.1536.834" timestamp="1599925454237" />
     <state x="654" y="251" key="#File_Watchers" timestamp="1599251752266">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="654" y="251" key="#File_Watchers/0.0.1536.834@0.0.1536.834" timestamp="1599251752266" />
-    <state x="526" y="241" key="#Notifications" timestamp="1599384908217">
+    <state x="526" y="241" key="#Notifications" timestamp="1599924261512">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="526" y="241" key="#Notifications/0.0.1536.834@0.0.1536.834" timestamp="1599384908217" />
+    <state x="526" y="241" key="#Notifications/0.0.1536.834@0.0.1536.834" timestamp="1599924261512" />
     <state x="498" y="197" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper" timestamp="1599491155511">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="498" y="197" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/0.0.1536.834@0.0.1536.834" timestamp="1599491155511" />
+    <state x="466" y="252" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1599818798617">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="466" y="252" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.834@0.0.1536.834" timestamp="1599818798617" />
     <state x="545" y="330" key="ComposerInitDialogKey" timestamp="1599162144765">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="545" y="330" key="ComposerInitDialogKey/0.0.1536.834@0.0.1536.834" timestamp="1599162144765" />
-    <state x="438" y="196" key="EditFileWatcherDialog" timestamp="1599251648178">
+    <state x="438" y="196" key="EditFileWatcherDialog" timestamp="1599682655739">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="438" y="196" key="EditFileWatcherDialog/0.0.1536.834@0.0.1536.834" timestamp="1599251648178" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1599161838117">
+    <state x="438" y="196" key="EditFileWatcherDialog/0.0.1536.834@0.0.1536.834" timestamp="1599682655739" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1599679306893">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599161838117" />
-    <state x="277" y="62" key="SettingsEditor" timestamp="1599491666831">
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599679306893" />
+    <state x="277" y="62" key="SettingsEditor" timestamp="1599925513979">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="277" y="62" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1599491666831" />
+    <state x="277" y="62" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1599925513979" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1599833751101">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1599833751101" />
   </component>
 </project>

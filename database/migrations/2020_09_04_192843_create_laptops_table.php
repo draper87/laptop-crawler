@@ -15,13 +15,19 @@ class CreateLaptopsTable extends Migration
     {
         Schema::create('laptops', function (Blueprint $table) {
             $table->id();
+            $table->integer('laptop_id');
             $table->string('name');
             $table->string('brand');
-            $table->integer('ram_memory');
+            $table->string('ram_memory');
+            $table->string('motherboard');
+            $table->string('network');
+            $table->string('connections');
             $table->string('cpu_brand');
             $table->string('display_size');
-            $table->integer('storage_size');
+            $table->string('storage_size');
             $table->string('video_card');
+            $table->integer('battery');
+            $table->integer('weight');
             $table->timestamps();
         });
     }
