@@ -14,11 +14,20 @@ class Laptop extends Model
         'motherboard',
         'network',
         'connections',
-        'cpu_brand',
+        'cpu_name',
         'display_size',
         'storage_size',
-        'video_card',
+        'videocard_name',
         'battery',
-        'weight'
+        'price'
     ];
+
+    public function videocard() {
+        return $this->belongsTo('App\Videocard');
+    }
+
+    public function cpu() {
+        return $this->belongsTo('App\Cpu');
+    }
+
 }

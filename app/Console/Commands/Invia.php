@@ -2,12 +2,15 @@
 
 namespace App\Console\Commands;
 
+use App\Cpu;
+use App\Videocard;
 use Illuminate\Console\Command;
 use GuzzleHttp\Client;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Contracts\Cache\ItemInterface;
 use App\Laptop;
+Use \Throwable;
 
 class Invia extends Command
 {
@@ -99,6 +102,12 @@ class Invia extends Command
         // array dove vado a pushare i singoli laptop
         $specifications = [];
 
+        // array dove vado a pushare le singole videocard
+        $specifications_videocard = [];
+
+        // array dove vado a pushare le singole cpu
+        $specifications_cpu = [];
+
 
         foreach ($laptopSheetLinks as $link) {
 
@@ -119,6 +128,12 @@ class Invia extends Command
             // array dove pusho i dati dei miei laptop
             $laptopDetails = [];
 
+            // array dove pusho i dati delle videocards
+            $videocardDetails = [];
+
+            // array dove pusho i dati delle cpus
+            $cpuDetails = [];
+
             // Codice per tirare fuori i dati
 
             // estraggo ID univoco
@@ -135,7 +150,8 @@ class Invia extends Command
             // estraggo la ram
             $ram_memory = $pageResultCrawler->filter('.specs_element')->eq(2)->text();
             $ram_memory_regex = findSpeed('\d{4,6}', $ram_memory);
-            $laptopDetails['ram_memory'] = $ram_memory_regex;
+            $ram_memory_refactored = floor($ram_memory_regex / 1000);
+            $laptopDetails['ram_memory'] = $ram_memory_refactored;
 
             // estraggo la scheda madre
             $motherboard = $pageResultCrawler->filter('.specs_element')->eq(4)->children('.specs_details')->text();
@@ -152,7 +168,8 @@ class Invia extends Command
             // estraggo la CPU
             //    uso if in quanto se non trova risultati va in errore
             if ($pageResultCrawler->filter('.specs_element')->eq(0)->children('.specs_details a')->count() > 0) {
-                $laptopDetails['cpu_brand'] = $pageResultCrawler->filter('.specs_element')->eq(0)->children('.specs_details a')->text();
+                $cpuDetails['name'] = $pageResultCrawler->filter('.specs_element')->eq(0)->children('.specs_details a')->text();
+                $laptopDetails['cpu_name'] = $pageResultCrawler->filter('.specs_element')->eq(0)->children('.specs_details a')->text();
             }
 
             // estraggo dimensioni display
@@ -166,7 +183,8 @@ class Invia extends Command
             $laptopDetails['storage_size'] = $storage_size_regex;
 
             // estraggo scheda video
-            $laptopDetails['video_card'] = $pageResultCrawler->filter('.specs_element')->eq(1)->children('.specs_details a')->text();
+            $videocardDetails['name'] = $pageResultCrawler->filter('.specs_element')->eq(1)->children('.specs_details a')->text();
+            $laptopDetails['videocard_name'] = $pageResultCrawler->filter('.specs_element')->eq(1)->children('.specs_details a')->text();
 
             // estraggo batteria
             try {
@@ -177,28 +195,61 @@ class Invia extends Command
                 echo 'Eccezione: ' . $e->getMessage();
             }
 
-            // estraggo peso laptop
+//            // estraggo peso laptop
+//            try {
+//                $laptop_weight = $pageResultCrawler->filter('.specs_element')->eq(14)->children('.specs_details')->text();
+//                $laptop_weight_regex = findSpeed('\d\.\d\d?\d?', $laptop_weight);
+//                $laptopDetails['weight'] = $laptop_weight_regex;
+//            } catch (Throwable $e) {
+//                echo 'Eccezione: ' . $e->getMessage();
+//            }
+
+            // estraggo prezzo laptop
             try {
-                $laptop_weight = $pageResultCrawler->filter('.specs_element')->eq(14)->children('.specs_details')->text();
-                $laptop_weight_regex = findSpeed('\d\.\d\d?\d?', $laptop_weight);
-                $laptopDetails['weight'] = $laptop_weight_regex;
+                $laptop_price = $pageResultCrawler->filter('.specs_element')->eq(15)->children('.specs_details')->text();
+                $laptop_price_regex = findSpeed('\d\d\d\d?', $laptop_price);
+                $laptopDetails['price'] = $laptop_price_regex;
             } catch (Throwable $e) {
                 echo 'Eccezione: ' . $e->getMessage();
             }
 
 
-
             $specifications[] = $laptopDetails;
 
-//            var_dump($laptopDetails);
-//
-//            die();
+            $specifications_videocard[] = $videocardDetails;
+
+            $specifications_cpu[] = $cpuDetails;
+
+            var_dump($laptopDetails);
+
+            die();
 
         }
 
 
+        // faccio un foreach per salvare i dati nella tabella "Videocards"
+        foreach ($specifications_videocard as $videocard) {
+            $new_videocard = new Videocard();
+            $new_videocard->fill($videocard);
+            // skippo gli elementi gia esistenti
+            if (Videocard::where('name', '=', $new_videocard->name)->exists()) {
+                continue;
+            }
+            $risultato_videocard = $new_videocard->save();
+        }
 
-        // faccio un foreach per salvare i dati nel mio database
+        // faccio un foreach per salvare i dati nella tabella "Cpus"
+        foreach ($specifications_cpu as $cpu) {
+            $new_cpu = new Cpu();
+            $new_cpu->fill($cpu);
+            // skippo gli elementi gia esistenti
+            if (Cpu::where('name', '=', $new_cpu->name)->exists()) {
+                continue;
+            }
+            $risultato_videocard = $new_cpu->save();
+        }
+
+        // faccio un foreach per salvare i dati nella tabella "Laptops"
         foreach ($specifications as $specification) {
             $new_laptop = new Laptop();
             $new_laptop->fill($specification);
@@ -209,13 +260,27 @@ class Invia extends Command
             $risultato = $new_laptop->save();
         }
 
-
         // faccio il print sul terminale di avvenuta scrittura
         if (isset($risultato)) {
-            $this->info('Push avvenuto con successo');
+            $this->info('Tabella Laptops: Push avvenuto con successo');
         } else {
-            $this->info('Push non avvenuto, probabilmente ci sono duplicati');
+            $this->info('Tabella Laptops: Push non avvenuto, probabilmente ci sono duplicati');
         }
+
+        // faccio il print sul terminale di avvenuta scrittura per le videocards
+        if (isset($risultato_videocard)) {
+            $this->info('Tabella Videocards: Push avvenuto con successo');
+        } else {
+            $this->info('Tabella Videocards: Push non avvenuto, probabilmente ci sono duplicati');
+        }
+
+        // faccio il print sul terminale di avvenuta scrittura per le cpus
+        if (isset($risultato_videocard)) {
+            $this->info('Tabella Videocards: Push avvenuto con successo');
+        } else {
+            $this->info('Tabella Videocards: Push non avvenuto, probabilmente ci sono duplicati');
+        }
+
 
 
         return '';

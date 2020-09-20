@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Videocard;
 use Illuminate\Http\Request;
 use App\Laptop;
+use App\Cpu;
 
 class LaptopController extends Controller
 {
     public function index() {
 
         $laptops = Laptop::all();
+        $videocards = Videocard::query()->orderBy('name','asc')->get();
+        $cpus = Cpu::all();
 
-        return view('laptop.index', compact('laptops'));
+        return view('index', compact('laptops', 'videocards','cpus'));
     }
 
 

@@ -14,9 +14,40 @@ class LaptopController extends Controller
         $query = Laptop::query();
 
         // restituisco solamente i risultati con la scheda video selezionata
-        if ($videoCardId = $request->get('video_card')){
-            $query->where('video_card', $videoCardId);
+        if ($videoCardName = $request->get('video_card')){
+            $query->where('videocard_name', $videoCardName);
         }
+
+        // restituisco solamente i risultati con la CPU selezionata
+        if ($cpuName = $request->get('cpu')){
+            $query->where('cpu_name', $cpuName);
+        }
+
+        // restituisco solamente i risultati con la ram selezionata
+        if ($ram_memory = $request->get('ram')){
+            $laptops = Laptop::all();
+            $query->where('ram_memory', $ram_memory);
+        }
+
+        // restituisco solamente i risultati con il display size selezionato
+        if ($displaySize = $request->get('display')){
+            $displaySize_array = explode(",", $displaySize); // displaysize è una stringa, uso explode per ottenere un array di 2 numeri
+            $display1 = floatval($displaySize_array[0]); // trasformo il valore in un integer
+            $display2 = floatval($displaySize_array[1]); // trasformo il valore in un integer
+            $query->whereBetween('display_size', [$display1, $display2]);
+        }
+
+        // restituisco solamente i risultati con il prezzo selezionato
+        if ($price = $request->get('price')){
+            $price_array = explode(",", $price); // price è una stringa, uso explode per ottenere un array di 2 numeri
+            $price1 = intval($price_array[0]); // trasformo il valore in un integer
+            $price2 = intval($price_array[1]); // trasformo il valore in un integer
+            $query->whereBetween('price', [$price1, $price2]);
+        }
+
+
+
+
 
 //        if ($request->has('cpu_id')){
 //            $cpu = Cpu::find($request->get('cpu_id'));
@@ -32,7 +63,7 @@ class LaptopController extends Controller
 //            $query->where('ram',  $request->get('ram'));
 //        }
 
-//        $query->with(['cpu', 'videoCard']);
+//        $query->with(['Cpu', 'Videocard']);
 
         return $query->get();
         //return $query->paginate(20);

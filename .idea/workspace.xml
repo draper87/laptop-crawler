@@ -20,20 +20,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="246335cc-7650-43ad-a818-7efc98aa85ff" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/css/lc_switch.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/lc_switch.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/partials/footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/partials/navbar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../MAMP/htdocs/testami-master/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../MAMP/htdocs/testami-master/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/progetto-laptop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/progetto-laptop.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/Invia.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Invia.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/+/Y/SKmRdUWx1+RBG-KpgYIg" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/+/Y/SKmRdUWx1+RBG-KpgYIg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/1/L/4axzJSClL7HK8xQM8JPg" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/1/L/4axzJSClL7HK8xQM8JPg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/2/M/qMgDS-kzDGFb2CnPwNWw" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/2/M/qMgDS-kzDGFb2CnPwNWw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/2/Z/43TNBNvtOvXajFsfINow" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/2/Z/43TNBNvtOvXajFsfINow" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/6/1/KYntH9s96UB+GWghEd2A" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/6/1/KYntH9s96UB+GWghEd2A" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/9/M/LVB8AP1LYxCO1b8xf+ZA" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/9/M/LVB8AP1LYxCO1b8xf+ZA" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/A/1/lW5Ci3HoDwqvbelrrCug" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/A/1/lW5Ci3HoDwqvbelrrCug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/A/V/CPVaaq6gNqKkHSkRFE0A" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/A/V/CPVaaq6gNqKkHSkRFE0A" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/B/G/ynkUqbXnX1a03nDcXHIw" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/B/G/ynkUqbXnX1a03nDcXHIw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/B/T/vC51iaOITic92KVx2Glw" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/B/T/vC51iaOITic92KVx2Glw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/C/A/ezDWiUensECBVHBYXPQA" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/C/A/ezDWiUensECBVHBYXPQA" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/C/N/A1qXFBZHW9OlsPKU8gNg" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/C/N/A1qXFBZHW9OlsPKU8gNg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/D/X/0oz5PYwy1iBDu0scKfKA" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/D/X/0oz5PYwy1iBDu0scKfKA" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/E/M/QMySyrtQCo9OUP-ns-Kg" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/E/M/QMySyrtQCo9OUP-ns-Kg" afterDir="false" />
@@ -46,19 +54,30 @@
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/L/X/bCnp4fjrcdna2OLVoe6g" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/L/X/bCnp4fjrcdna2OLVoe6g" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/M/4/6bX5KOCU9j1cAg-45zeQ" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/M/4/6bX5KOCU9j1cAg-45zeQ" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/M/H/jr8aoHuZFB0YtI5R8S-g" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/M/H/jr8aoHuZFB0YtI5R8S-g" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/P/L/FzDCJPaNT9ocJKgqXASg" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/P/L/FzDCJPaNT9ocJKgqXASg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/P/Y/-XO7BVaJinP71fMoLdgg" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/P/Y/-XO7BVaJinP71fMoLdgg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/Q/K/JiYk5BjqmH+hnEBBPHQQ" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/Q/K/JiYk5BjqmH+hnEBBPHQQ" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/R/L/gvGKmaHYKJNpcjsN4-CQ" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/R/L/gvGKmaHYKJNpcjsN4-CQ" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/R/T/EKWGZrld8Fe-MJxYZq1w" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/R/T/EKWGZrld8Fe-MJxYZq1w" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/S/L/o2fNeUkCsIjRl+16-Dhw" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/S/L/o2fNeUkCsIjRl+16-Dhw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/T/K/UXxktEM5LxucJq2GHmYg" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/T/K/UXxktEM5LxucJq2GHmYg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/X/G/MYH5ui7sdQFylToUkHjg" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/X/G/MYH5ui7sdQFylToUkHjg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/Y/3/Jo4GdgAf7ChDOYLMnfCA" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/Y/3/Jo4GdgAf7ChDOYLMnfCA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/Y/P/1KedikouJxPtvMyEyjFw" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/Y/P/1KedikouJxPtvMyEyjFw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/Z/C/jmGCDKmhE3XQeEBu3QwA" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/Z/C/jmGCDKmhE3XQeEBu3QwA" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/Z/U/6C1GAQ5u0uGoyyE-jMtA" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/Z/U/6C1GAQ5u0uGoyyE-jMtA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/LaptopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/LaptopController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LaptopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LaptopController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Laptop.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Laptop.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_192843_create_laptops_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_192843_create_laptops_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_192843_create_laptops_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_12_163850_create_laptops_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/laptop/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/laptop/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/laptop/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/laptop/layout/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -211,22 +230,22 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../theme-test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../theme-progettolaptop" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\drape\Desktop\Repo\theme-test\public\js" />
-      <recent name="C:\Users\drape\Desktop\Repo\theme-test\public\css" />
-      <recent name="C:\Users\drape\Desktop\Repo\theme-test\public" />
-      <recent name="C:\Users\drape\Desktop\Repo\theme-test\resources\sass" />
-      <recent name="C:\Users\drape\Desktop\Repo\theme-test\resources" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\drape\Desktop\Repo\theme-test" />
       <recent name="C:\Users\drape\Desktop\Repo\theme-test\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\public\css" />
+      <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\public\js" />
+      <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\public\assets\img" />
+      <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\public" />
+      <recent name="C:\Users\drape\Desktop\Repo\theme-test\public\js" />
     </key>
   </component>
   <component name="RunManager">
@@ -264,7 +283,19 @@
       <workItem from="1599814895007" duration="6814000" />
       <workItem from="1599833464855" duration="6493000" />
       <workItem from="1599924239158" duration="1330000" />
-      <workItem from="1599925588189" duration="335000" />
+      <workItem from="1599925588189" duration="6035000" />
+      <workItem from="1599982685275" duration="3759000" />
+      <workItem from="1600181422495" duration="9112000" />
+      <workItem from="1600251893544" duration="73000" />
+      <workItem from="1600358324513" duration="4244000" />
+      <workItem from="1600362711013" duration="148000" />
+      <workItem from="1600447852331" duration="63000" />
+      <workItem from="1600449543625" duration="66000" />
+      <workItem from="1600449763353" duration="50000" />
+      <workItem from="1600451639025" duration="5000" />
+      <workItem from="1600507953731" duration="6875000" />
+      <workItem from="1600522527179" duration="14958000" />
+      <workItem from="1600595945746" duration="7194000" />
     </task>
     <servers />
   </component>
@@ -312,14 +343,18 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="438" y="196" key="EditFileWatcherDialog/0.0.1536.834@0.0.1536.834" timestamp="1599682655739" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1599679306893">
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1600523853111">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599679306893" />
-    <state x="277" y="62" key="SettingsEditor" timestamp="1599925513979">
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1600523853111" />
+    <state x="277" y="62" key="SettingsEditor" timestamp="1600596608174">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="277" y="62" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1599925513979" />
+    <state x="277" y="62" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1600596608174" />
+    <state x="425" y="189" key="run.anything.popup" timestamp="1600530225191">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1600530225191" />
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1599833751101">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
