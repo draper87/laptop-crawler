@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'LaptopController@index');
+Route::get('/', 'LaptopController@index')->name('index');
+Route::get('{laptop}', 'LaptopController@show');
 
-//Route::get('/laptop', 'LaptopController@index');
 
 

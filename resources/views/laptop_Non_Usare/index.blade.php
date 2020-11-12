@@ -1,4 +1,4 @@
-@extends('laptop.layout.app')
+@extends('laptop_Non_Usare.layout.app')
 
 @section('title')
     Laptop Finder

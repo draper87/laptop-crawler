@@ -18,5 +18,13 @@ class LaptopController extends Controller
         return view('index', compact('laptops', 'videocards','cpus'));
     }
 
+    public function show(Laptop $laptop) {
+
+        return view('show', compact('laptop'));
+
+    }
+
+
+
 
 }

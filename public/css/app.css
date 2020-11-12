@@ -13,10 +13,6 @@
   display: none;
 }
 
-.select2-search__field {
-  text-align: center;
-}
-
 /*!
 * Start Bootstrap - SB UI Kit Pro v1.0.2 (https://shop.startbootstrap.com/product/sb-ui-kit-pro)
 * Copyright 2013-2020 Start Bootstrap
@@ -21572,7 +21568,7 @@ section {
 .page-header {
   position: relative;
   padding-top: 8rem;
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
 }
 
 .page-header .page-header-content .page-header-title {

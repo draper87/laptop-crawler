@@ -8,6 +8,13 @@ $(document).ready(function() {
     // chiamata Ajax quando premo il tasto Invia
     $('#bottone').click(function() {
         chiamaLaptops();
+        // eseguo scroll "ritardato", in modo che risulti piu fluido
+        setTimeout(function() {
+            $('html, body').animate({
+                scrollTop: $("#show").offset().top
+            }, 1000);
+        }, 500);
+
     })
 
     // metto in una variabile il valore scelto dall utente della select "video_card"
@@ -30,6 +37,8 @@ $(document).ready(function() {
 
 
 
+
+
     // funzione che fa chiamata Ajax all mia API su laravel
     function chiamaLaptops() {
 
@@ -40,12 +49,13 @@ $(document).ready(function() {
                 video_card: videocard,
                 cpu: cpu,
                 ram: ram,
+                ramchecked: ramchecked,
                 display: mySlider.getValue(),
                 price: mySliderPrice.getValue()
             },
             success: function(dataResponse) {
-                console.log(dataResponse);
-                stampaLaptops(dataResponse);
+                console.log(dataResponse.data);
+                stampaLaptops(dataResponse.data);
             },
             error: function() {
                 alert('il server non funziona');
@@ -106,16 +116,35 @@ $(document).ready(function() {
     });
 
     $('.js-basic-single-cpu').select2({
-        placeholder: "Select your Cpu",
+        placeholder: "Select your CPU",
         allowClear: true
     });
 
     $('.js-basic-multiple-ram').select2({
-        placeholder: "Select your Ram",
+        placeholder: "Select your ram amount",
+        allowClear: true
     });
 
-    $('.bettercheckbox').lc_switch('YES', 'NO');
+    // Switch script
+    $('#rambettercheckbox').lc_switch('', '');
+    var ramchecked = 0;
+    $('body').delegate('#rambettercheckbox', 'lcs-on', function() {
+        ramchecked = 1;
+        console.log(ramchecked);
+    });
+    $('body').delegate('#rambettercheckbox', 'lcs-off', function() {
+        ramchecked = 0;
+        console.log(ramchecked);
+    });
 
+    $('#videocardbettercheckbox').lc_switch('', '');
+
+    $('#cpubettercheckbox').lc_switch('', '');
+
+
+
+
+    // La parte qui sotto è relativa al tema, non toccare!!
     // Enable Bootstrap tooltips via data-attributes globally
     $('[data-toggle="tooltip"]').tooltip();
 

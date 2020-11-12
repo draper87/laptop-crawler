@@ -11,7 +11,7 @@ class LaptopController extends Controller
     public function index(Request $request)
     {
         // inizializzo la mia query
-        $query = Laptop::query();
+        $query = Laptop::query(); // inizializzo la mia query al database
 
         // restituisco solamente i risultati con la scheda video selezionata
         if ($videoCardName = $request->get('video_card')){
@@ -24,10 +24,15 @@ class LaptopController extends Controller
         }
 
         // restituisco solamente i risultati con la ram selezionata
-        if ($ram_memory = $request->get('ram')){
-            $laptops = Laptop::all();
-            $query->where('ram_memory', $ram_memory);
+        if ($ram_memory = $request->get('ram')) {
+            if ($request->input('ramchecked') == 1) { // stampo anche i quantitativi di ram maggiori
+                $query->where('ram_memory', '>=' , $ram_memory);
+            }
+            elseif ($request->input('ramchecked') == 0) { // stampo solo il quantitativo di ram selezionato
+                $query->where('ram_memory', $ram_memory);
+            }
         }
+
 
         // restituisco solamente i risultati con il display size selezionato
         if ($displaySize = $request->get('display')){
@@ -65,8 +70,7 @@ class LaptopController extends Controller
 
 //        $query->with(['Cpu', 'Videocard']);
 
-        return $query->get();
-        //return $query->paginate(20);
+         return $query->paginate(15);
     }
 }
 

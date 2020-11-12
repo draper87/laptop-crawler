@@ -99,7 +99,7 @@ class Invia extends Command
 
         echo 'Trovati ' . count($laptopSheetLinks) . " links\n\n";
 
-        // array dove vado a pushare i singoli laptop
+        // array dove vado a pushare i singoli laptop_Non_Usare
         $specifications = [];
 
         // array dove vado a pushare le singole videocard
@@ -125,7 +125,7 @@ class Invia extends Command
 
             $pageResultCrawler = new Crawler($pageResultHtml);
 
-            // array dove pusho i dati dei miei laptop
+            // array dove pusho i dati dei miei laptop_Non_Usare
             $laptopDetails = [];
 
             // array dove pusho i dati delle videocards
@@ -195,7 +195,7 @@ class Invia extends Command
                 echo 'Eccezione: ' . $e->getMessage();
             }
 
-//            // estraggo peso laptop
+//            // estraggo peso laptop_Non_Usare
 //            try {
 //                $laptop_weight = $pageResultCrawler->filter('.specs_element')->eq(14)->children('.specs_details')->text();
 //                $laptop_weight_regex = findSpeed('\d\.\d\d?\d?', $laptop_weight);
@@ -204,7 +204,7 @@ class Invia extends Command
 //                echo 'Eccezione: ' . $e->getMessage();
 //            }
 
-            // estraggo prezzo laptop
+            // estraggo prezzo laptop_Non_Usare
             try {
                 $laptop_price = $pageResultCrawler->filter('.specs_element')->eq(15)->children('.specs_details')->text();
                 $laptop_price_regex = findSpeed('\d\d\d\d?', $laptop_price);

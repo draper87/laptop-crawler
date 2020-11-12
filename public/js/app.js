@@ -24417,7 +24417,13 @@ var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebar
 $(document).ready(function () {
   // chiamata Ajax quando premo il tasto Invia
   $('#bottone').click(function () {
-    chiamaLaptops();
+    chiamaLaptops(); // eseguo scroll "ritardato", in modo che risulti piu fluido
+
+    setTimeout(function () {
+      $('html, body').animate({
+        scrollTop: $("#show").offset().top
+      }, 1000);
+    }, 500);
   }); // metto in una variabile il valore scelto dall utente della select "video_card"
 
   var videocard;
@@ -24443,12 +24449,13 @@ $(document).ready(function () {
         video_card: videocard,
         cpu: cpu,
         ram: ram,
+        ramchecked: ramchecked,
         display: mySlider.getValue(),
         price: mySliderPrice.getValue()
       },
       success: function success(dataResponse) {
-        console.log(dataResponse);
-        stampaLaptops(dataResponse);
+        console.log(dataResponse.data);
+        stampaLaptops(dataResponse.data);
       },
       error: function error() {
         alert('il server non funziona');
@@ -24506,13 +24513,27 @@ $(document).ready(function () {
     allowClear: true
   });
   $('.js-basic-single-cpu').select2({
-    placeholder: "Select your Cpu",
+    placeholder: "Select your CPU",
     allowClear: true
   });
   $('.js-basic-multiple-ram').select2({
-    placeholder: "Select your Ram"
+    placeholder: "Select your ram amount",
+    allowClear: true
+  }); // Switch script
+
+  $('#rambettercheckbox').lc_switch('', '');
+  var ramchecked = 0;
+  $('body').delegate('#rambettercheckbox', 'lcs-on', function () {
+    ramchecked = 1;
+    console.log(ramchecked);
   });
-  $('.bettercheckbox').lc_switch('YES', 'NO'); // Enable Bootstrap tooltips via data-attributes globally
+  $('body').delegate('#rambettercheckbox', 'lcs-off', function () {
+    ramchecked = 0;
+    console.log(ramchecked);
+  });
+  $('#videocardbettercheckbox').lc_switch('', '');
+  $('#cpubettercheckbox').lc_switch('', ''); // La parte qui sotto è relativa al tema, non toccare!!
+  // Enable Bootstrap tooltips via data-attributes globally
 
   $('[data-toggle="tooltip"]').tooltip(); // Enable Bootstrap popovers via data-attributes globally
 
@@ -24606,15 +24627,27 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/show.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/show.scss ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!****************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/show.scss ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\drape\Desktop\Repo\progetto-laptop\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\drape\Desktop\Repo\progetto-laptop\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /mnt/c/Users/drape/Desktop/Repo/progetto-laptop/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /mnt/c/Users/drape/Desktop/Repo/progetto-laptop/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /mnt/c/Users/drape/Desktop/Repo/progetto-laptop/resources/sass/show.scss */"./resources/sass/show.scss");
 
 
 /***/ })

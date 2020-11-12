@@ -10,7 +10,7 @@
 </head>
 <body>
 
-@include('laptop.partials.header')
+@include('laptop_Non_Usare.partials.header')
 
 @yield('section')
 
