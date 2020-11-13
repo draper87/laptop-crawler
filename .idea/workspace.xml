@@ -20,25 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="246335cc-7650-43ad-a818-7efc98aa85ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/sass/show.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../MAMP/htdocs/testami-master/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../MAMP/htdocs/testami-master/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/Invia.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Invia.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/LaptopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/LaptopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LaptopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LaptopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Laptop.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Laptop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/laptop/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/laptop_Non_Usare/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/laptop/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/laptop_Non_Usare/layout/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/laptop/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/laptop_Non_Usare/partials/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,12 +183,17 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../boolbnb" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/storage/app/public/images" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\storage\app\public\images" />
+      <recent name="C:\Users\drape\Desktop\Repo\theme-test" />
+      <recent name="C:\Users\drape\Desktop\Repo\theme-test\resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\resources\views" />
       <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\resources\views\laptop" />
@@ -203,16 +201,27 @@
       <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\public\js" />
       <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\public\assets\img" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\drape\Desktop\Repo\theme-test" />
-      <recent name="C:\Users\drape\Desktop\Repo\theme-test\resources" />
-    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHPUnit.phpunit.xml">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <configuration name="watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="watch" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.watch" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -263,6 +272,9 @@
       <workItem from="1605113925352" duration="35000" />
       <workItem from="1605113988331" duration="91000" />
       <workItem from="1605114096057" duration="333000" />
+      <workItem from="1605177046871" duration="210000" />
+      <workItem from="1605177477094" duration="231000" />
+      <workItem from="1605259875725" duration="20744000" />
     </task>
     <servers />
   </component>
@@ -314,6 +326,26 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1600848251173" />
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1605177256181">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1605177256181" />
+    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1605177256180">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1605177256180" />
+    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1605177256180">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1605177256180" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1605177256180">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1605177256180" />
+    <state x="604" y="341" key="NewPhpFileDialog" timestamp="1605278666280">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="604" y="341" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1605278666280" />
     <state x="277" y="62" key="SettingsEditor" timestamp="1600596608174">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

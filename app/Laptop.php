@@ -19,7 +19,8 @@ class Laptop extends Model
         'storage_size',
         'videocard_name',
         'battery',
-        'price'
+        'price',
+        'image_path',
     ];
 
     public function videocard() {

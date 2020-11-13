@@ -108,7 +108,9 @@
 <script id="entry-template" type="text/x-handlebars-template">
     <div class="laptop col-lg-4 mb-5 mb-lg-5">
         <a class="card lift h-100" href="{{route('index')}}/@{{id}}"><div class="card-flag card-flag-dark card-flag-top-right">@{{ price }}$</div>
-            <img class="card-img-top" src="/assets/img/laptop.jpg" alt="...">
+            <div class="laptop-img">
+            <img class="card-img-top" src="{{asset('storage')}}/@{{image_path}}" alt="@{{image_path}}">
+            </div>
             <div class="card-body">
                 <h3 class="text-primary mb-0">@{{brand}}</h3>
                 <div class="small text-gray-800 font-weight-500">@{{name}}</div>

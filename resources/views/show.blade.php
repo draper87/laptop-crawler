@@ -41,7 +41,11 @@
             <div class="box-product">
 
                 <div class="left-box">
-                    <img src="/assets/img/laptop.jpg" alt="laptop">
+                    @if(isset($laptop->image_path))
+                    <img src="{{asset('storage') . '/' . $laptop->image_path}}" alt="laptop">
+                    @else
+                    <img src="{{asset('storage') . '/' . 'images/laptop.jpg'}}" alt="laptop">
+                    @endif
                 </div>
                 <div class="right-box">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi corporis doloribus eaque error
@@ -55,17 +59,24 @@
                         <span>Network: {{$laptop->network}}</span>
                         <span class="grey-span">Connections: {{$laptop->connections}}</span>
                         <span>Cpu: {{$laptop->cpu_name}}</span>
-                        <span class="grey-span">Display size: {{$laptop->display_size}}</span>
-                        <span>Storage: {{$laptop->storage_size}}</span>
+                        <span class="grey-span">Display size: {{$laptop->display_size}}"</span>
+                        <span>Storage: {{$laptop->storage_size}} Gb</span>
                         <span class="grey-span">Videocard: {{$laptop->videocard_name}}</span>
                         <span>Battery: {{$laptop->battery}}</span>
-                        <span class="grey-span">Price: {{$laptop->price}}</span>
+                        <span class="grey-span">Price: {{$laptop->price}} $</span>
                     </div>
 
 
                 </div>
 
             </div>
+
+            <div class="mt-5 text-center">
+
+                <a id="back-button" class="btn btn-teal btn-marketing rounded-pill lift lift-sm">Go Back</a>
+
+            </div>
+
 
         </div>
 
@@ -92,5 +103,7 @@
 @endsection
 
 <link rel="stylesheet" href="{{asset('css/show.css')}}">
+
+
 
 

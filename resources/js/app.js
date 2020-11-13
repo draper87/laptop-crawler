@@ -36,32 +36,37 @@ $(document).ready(function() {
     })
 
 
-
-
-
     // funzione che fa chiamata Ajax all mia API su laravel
     function chiamaLaptops() {
 
-        $.ajax({
-            url: 'http://127.0.0.1:8000/api/laptops',
-            method: 'GET',
-            data: {
-                video_card: videocard,
-                cpu: cpu,
-                ram: ram,
-                ramchecked: ramchecked,
-                display: mySlider.getValue(),
-                price: mySliderPrice.getValue()
-            },
-            success: function(dataResponse) {
-                console.log(dataResponse.data);
-                stampaLaptops(dataResponse.data);
-            },
-            error: function() {
-                alert('il server non funziona');
-            }
-        })
-    }
+            $.ajax({
+                url: 'http://127.0.0.1:8000/api/laptops',
+                method: 'GET',
+                data: {
+                    video_card: videocard,
+                    cpu: cpu,
+                    ram: ram,
+                    ramchecked: ramchecked,
+                    display: mySlider.getValue(),
+                    price: mySliderPrice.getValue()
+                },
+                success: function(dataResponse) {
+                    sessionStorage.setItem('url', this.url);
+                    console.log(sessionStorage.getItem('url'));
+                    stampaLaptops(dataResponse.data);
+                },
+                error: function() {
+                    alert('il server non funziona');
+                }
+            })
+        }
+
+
+
+    $('#back-button').click(function() {
+        window.history.back();
+    })
+
 
 
     // funzione che usa handlebars per stampare i risultati ottenuti dalla chiamata Ajax
@@ -72,6 +77,10 @@ $(document).ready(function() {
 
         for (var i = 0; i < dataResponse.length; i++) {
             var context = dataResponse[i];
+            // se non è disponibile un immagine per il laptop viene caricata quella di default
+            if(context['image_path'] === null) {
+                context['image_path'] = "images/laptop.jpg";
+            }
             var html = template(context);
             $('.lista').append(html);
         }

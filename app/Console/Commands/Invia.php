@@ -99,7 +99,7 @@ class Invia extends Command
 
         echo 'Trovati ' . count($laptopSheetLinks) . " links\n\n";
 
-        // array dove vado a pushare i singoli laptop_Non_Usare
+        // array dove vado a pushare i singoli laptop
         $specifications = [];
 
         // array dove vado a pushare le singole videocard
@@ -204,7 +204,7 @@ class Invia extends Command
 //                echo 'Eccezione: ' . $e->getMessage();
 //            }
 
-            // estraggo prezzo laptop_Non_Usare
+            // estraggo prezzo laptop
             try {
                 $laptop_price = $pageResultCrawler->filter('.specs_element')->eq(15)->children('.specs_details')->text();
                 $laptop_price_regex = findSpeed('\d\d\d\d?', $laptop_price);

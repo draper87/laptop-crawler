@@ -10,6 +10,17 @@
     display: none;
 }
 
+// parte relativa alla thumbnail
+.laptop-img {
+    height: 300px;
+    position: relative;
+    .card-img-top {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
 
 
 @charset "UTF-8";
@@ -6773,6 +6784,7 @@ input[type=button].btn-block {
     flex: 1 1 auto;
     min-height: 1px;
     padding: 1.35rem;
+    z-index: 3;
 }
 
 .card-title {
@@ -19597,6 +19609,7 @@ body {
     border-bottom-left-radius: 0.25rem;
     top: 0.5rem;
     right: 0;
+    z-index: 5;
 }
 
 .card-flag-top-left {

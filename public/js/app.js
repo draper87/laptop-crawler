@@ -24454,15 +24454,19 @@ $(document).ready(function () {
         price: mySliderPrice.getValue()
       },
       success: function success(dataResponse) {
-        console.log(dataResponse.data);
+        sessionStorage.setItem('url', this.url);
+        console.log(sessionStorage.getItem('url'));
         stampaLaptops(dataResponse.data);
       },
       error: function error() {
         alert('il server non funziona');
       }
     });
-  } // funzione che usa handlebars per stampare i risultati ottenuti dalla chiamata Ajax
+  }
 
+  $('#back-button').click(function () {
+    window.history.back();
+  }); // funzione che usa handlebars per stampare i risultati ottenuti dalla chiamata Ajax
 
   function stampaLaptops(dataResponse) {
     $('.lista').html('');
@@ -24471,7 +24475,12 @@ $(document).ready(function () {
     var template = Handlebars.compile(source); // passiamo a Handlebars il percorso del template html
 
     for (var i = 0; i < dataResponse.length; i++) {
-      var context = dataResponse[i];
+      var context = dataResponse[i]; // se non è disponibile un immagine per il laptop viene caricata quella di default
+
+      if (context['image_path'] === null) {
+        context['image_path'] = "images/laptop.jpg";
+      }
+
       var html = template(context);
       $('.lista').append(html);
     }
