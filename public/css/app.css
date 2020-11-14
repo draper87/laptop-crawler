@@ -25,6 +25,12 @@
   transform: translate(-50%, -50%);
 }
 
+#pagina {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /*!
 * Start Bootstrap - SB UI Kit Pro v1.0.2 (https://shop.startbootstrap.com/product/sb-ui-kit-pro)
 * Copyright 2013-2020 Start Bootstrap
@@ -8047,6 +8053,7 @@ input[type=button].btn-block {
   padding-left: 0;
   list-style: none;
   border-radius: 0.35rem;
+  cursor: pointer;
 }
 
 .page-link {

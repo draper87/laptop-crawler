@@ -24441,7 +24441,7 @@ $(document).ready(function () {
     ram = $('#ram_memory').val();
   }); // funzione che fa chiamata Ajax all mia API su laravel
 
-  function chiamaLaptops() {
+  function chiamaLaptops(page) {
     $.ajax({
       url: 'http://127.0.0.1:8000/api/laptops',
       method: 'GET',
@@ -24451,18 +24451,22 @@ $(document).ready(function () {
         ram: ram,
         ramchecked: ramchecked,
         display: mySlider.getValue(),
-        price: mySliderPrice.getValue()
+        price: mySliderPrice.getValue(),
+        page: page
       },
       success: function success(dataResponse) {
-        sessionStorage.setItem('url', this.url);
-        console.log(sessionStorage.getItem('url'));
-        stampaLaptops(dataResponse.data);
+        // sessionStorage.setItem('url', this.url);
+        // console.log(sessionStorage.getItem('url'));
+        numeroPagina(dataResponse["current_page"], dataResponse["last_page"]);
+        stampaLaptops(dataResponse);
+        console.log(dataResponse);
       },
       error: function error() {
         alert('il server non funziona');
       }
     });
-  }
+  } // back button
+
 
   $('#back-button').click(function () {
     window.history.back();
@@ -24474,8 +24478,8 @@ $(document).ready(function () {
 
     var template = Handlebars.compile(source); // passiamo a Handlebars il percorso del template html
 
-    for (var i = 0; i < dataResponse.length; i++) {
-      var context = dataResponse[i]; // se non è disponibile un immagine per il laptop viene caricata quella di default
+    for (var i = 0; i < dataResponse.data.length; i++) {
+      var context = dataResponse.data[i]; // se non è disponibile un immagine per il laptop viene caricata quella di default
 
       if (context['image_path'] === null) {
         context['image_path'] = "images/laptop.jpg";
@@ -24484,6 +24488,48 @@ $(document).ready(function () {
       var html = template(context);
       $('.lista').append(html);
     }
+
+    stampaPagination(dataResponse['total'], dataResponse['current_page'], dataResponse['last_page']);
+  } // logica per la numerazione delle pagine
+  // dichiaro le mia variabili globali
+
+
+  var currentPage;
+  var lastPage;
+  var paginaSuccessiva;
+  var paginaIndietro; // scrivo la logica per la numerazione delle pagine
+
+  function numeroPagina(pagina, ultimaPagina) {
+    currentPage = pagina;
+    lastPage = ultimaPagina;
+
+    if (currentPage < lastPage && currentPage !== 1) {
+      paginaSuccessiva = pagina + 1;
+      paginaIndietro = pagina - 1;
+    } else if (currentPage === 1 && currentPage !== lastPage) {
+      paginaSuccessiva = pagina + 1;
+    } else {
+      paginaIndietro = pagina - 1;
+    }
+  } // aggiungo un event listener per il bottone next
+
+
+  $(document).on('click', '.next', function () {
+    if (currentPage !== lastPage) {
+      chiamaLaptops(paginaSuccessiva);
+    }
+  }); // aggiungo un event listener per il bottone previous
+
+  $(document).on('click', '.previous', function () {
+    if (currentPage !== 1) {
+      chiamaLaptops(paginaIndietro);
+    }
+  }); // stampo a schermo i bottoni della pagination
+
+  function stampaPagination(total, current, last) {
+    $('#pagina').html('');
+    var html = "<p>Found " + total + " results. Page " + current + " of " + last + "</p><ul class=\"pagination \"><li class=\"page-item\"><a class=\"page-link previous\">Indietro</a></li>" + " <li class=\"page-item\"><a class=\"page-link next\" >Avanti</a></li></ul>";
+    $('#pagina').append(html);
   } // range slider per il display size
 
 
@@ -24499,8 +24545,7 @@ $(document).ready(function () {
       scale: false,
       labels: false,
       tooltip: true,
-      onChange: function onChange(vals) {
-        console.log(vals);
+      onChange: function onChange(vals) {// console.log(vals);
       }
     });
     mySliderPrice = new rSlider({
@@ -24511,8 +24556,7 @@ $(document).ready(function () {
       scale: false,
       labels: false,
       tooltip: true,
-      onChange: function onChange(valsPrice) {
-        console.log(valsPrice);
+      onChange: function onChange(valsPrice) {// console.log(valsPrice);
       }
     });
   };
@@ -24533,12 +24577,10 @@ $(document).ready(function () {
   $('#rambettercheckbox').lc_switch('', '');
   var ramchecked = 0;
   $('body').delegate('#rambettercheckbox', 'lcs-on', function () {
-    ramchecked = 1;
-    console.log(ramchecked);
+    ramchecked = 1; // console.log(ramchecked);
   });
   $('body').delegate('#rambettercheckbox', 'lcs-off', function () {
-    ramchecked = 0;
-    console.log(ramchecked);
+    ramchecked = 0; // console.log(ramchecked);
   });
   $('#videocardbettercheckbox').lc_switch('', '');
   $('#cpubettercheckbox').lc_switch('', ''); // La parte qui sotto è relativa al tema, non toccare!!

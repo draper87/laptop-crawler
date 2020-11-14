@@ -87,7 +87,12 @@
                 <div class="lista row text-center">
                 </div>
 
+                <div id="pagina">
+                </div>
+
         </div>
+
+
         <div class="svg-border-rounded text-light">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
         </div>
@@ -107,7 +112,7 @@
 {{--          Sezione relativa ad Handlebars             --}}
 <script id="entry-template" type="text/x-handlebars-template">
     <div class="laptop col-lg-4 mb-5 mb-lg-5">
-        <a class="card lift h-100" href="{{route('index')}}/@{{id}}"><div class="card-flag card-flag-dark card-flag-top-right">@{{ price }}$</div>
+        <a class="card lift h-100" href="{{route('index')}}/@{{id}}" target="_blank" rel="noopener noreferrer"><div class="card-flag card-flag-dark card-flag-top-right">@{{ price }}$</div>
             <div class="laptop-img">
             <img class="card-img-top" src="{{asset('storage')}}/@{{image_path}}" alt="@{{image_path}}">
             </div>
