@@ -8,7 +8,8 @@ class Cpu extends Model
 {
     protected $fillable = [
         'name',
-        'score'
+        'score',
+        'cores',
     ];
 
     public function laptops() {

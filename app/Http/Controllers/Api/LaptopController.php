@@ -3,33 +3,54 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Videocard;
 use Illuminate\Http\Request;
 use App\Laptop;
+use Illuminate\Database\Eloquent\Builder;
 
 class LaptopController extends Controller
 {
     public function index(Request $request)
     {
         // inizializzo la mia query
-        $query = Laptop::query(); // inizializzo la mia query al database
+        $queryLaptop = Laptop::query(); // inizializzo la mia query al database
 
         // restituisco solamente i risultati con la scheda video selezionata
         if ($videoCardName = $request->get('video_card')){
-            $query->where('videocard_name', $videoCardName);
+            if ($request->input('videocardChecked') == 1) { // stampo anche le videocards con performance migliori
+                $query_video_card = Videocard::query()->where('name','=',$videoCardName)->get();
+                $query_video_card_element = $query_video_card->get('0');
+                $query_video_card_score = $query_video_card_element['score'];
+                $queryLaptop->whereHas('videocard',function (Builder $builder) use($query_video_card_score){
+                   $builder->where('score','>=',$query_video_card_score);
+                });
+            } else { // stampo solamente la videocard selezionata
+                $queryLaptop->where('videocard_name', $videoCardName);
+            }
         }
 
-        // restituisco solamente i risultati con la CPU selezionata
-        if ($cpuName = $request->get('cpu')){
-            $query->where('cpu_name', $cpuName);
+        // restituisco solamente i risultati con i # CoresCPU selezionati
+        if ($cpuCores = $request->get('cpu')) {
+            if ($request->input('coresChecked') == 1) { // stampo anche i # cores superiori
+                $queryLaptop->selectRaw("*")
+                    ->join('cpus', 'cpus.name', '=', 'laptops.cpu_name')
+                    ->where('cores', '>=', $cpuCores);
+
+            } else { // stampo solo i # cores selezionati
+                $queryLaptop->selectRaw("*")
+                    ->join('cpus', 'cpus.name', '=', 'laptops.cpu_name')
+                    ->where('cores', '=', $cpuCores);
+
+            }
         }
 
         // restituisco solamente i risultati con la ram selezionata
         if ($ram_memory = $request->get('ram')) {
             if ($request->input('ramchecked') == 1) { // stampo anche i quantitativi di ram maggiori
-                $query->where('ram_memory', '>=' , $ram_memory);
+                $queryLaptop->where('ram_memory', '>=' , $ram_memory);
             }
             elseif ($request->input('ramchecked') == 0) { // stampo solo il quantitativo di ram selezionato
-                $query->where('ram_memory', $ram_memory);
+                $queryLaptop->where('ram_memory', $ram_memory);
             }
         }
 
@@ -39,7 +60,7 @@ class LaptopController extends Controller
             $displaySize_array = explode(",", $displaySize); // displaysize è una stringa, uso explode per ottenere un array di 2 numeri
             $display1 = floatval($displaySize_array[0]); // trasformo il valore in un integer
             $display2 = floatval($displaySize_array[1]); // trasformo il valore in un integer
-            $query->whereBetween('display_size', [$display1, $display2]);
+            $queryLaptop->whereBetween('display_size', [$display1, $display2]);
         }
 
         // restituisco solamente i risultati con il prezzo selezionato
@@ -47,30 +68,13 @@ class LaptopController extends Controller
             $price_array = explode(",", $price); // price è una stringa, uso explode per ottenere un array di 2 numeri
             $price1 = intval($price_array[0]); // trasformo il valore in un integer
             $price2 = intval($price_array[1]); // trasformo il valore in un integer
-            $query->whereBetween('price', [$price1, $price2]);
+            $queryLaptop->whereBetween('price', [$price1, $price2]);
         }
 
 
+        $queryLaptop->with(['Cpu', 'Videocard']);
 
-
-
-//        if ($request->has('cpu_id')){
-//            $cpu = Cpu::find($request->get('cpu_id'));
-//
-//            $query->whereHas('cpu', function ($query) use ($cpu) {
-//                // Query sul model CPU
-//                return $query->where('score', '>=', $cpu->score);
-//            });
-//        }
-//
-//
-//        if ($request->has('ram')){
-//            $query->where('ram',  $request->get('ram'));
-//        }
-
-//        $query->with(['Cpu', 'Videocard']);
-
-         return $query->paginate(15);
+        return $queryLaptop->paginate(15);
     }
 }
 

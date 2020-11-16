@@ -53,27 +53,24 @@
                         ut voluptate voluptatum!</p>
 
                     <div class="product-list">
-                        <span class="grey-span">Brand: {{$laptop->brand}}</span>
+                        <span class="grey-span bold">Brand: {{$laptop->brand}}</span>
+                        <span>Cpu: {{$laptop->cpu_name}}</span>
+                        <span class="grey-span"># Cores: {{$laptop->cpu->cores}} </span>
                         <span>Ram: {{$laptop->ram_memory}} Gb</span>
                         <span class="grey-span">Motherboard: {{$laptop->motherboard}}</span>
                         <span>Network: {{$laptop->network}}</span>
                         <span class="grey-span">Connections: {{$laptop->connections}}</span>
-                        <span>Cpu: {{$laptop->cpu_name}}</span>
-                        <span class="grey-span">Display size: {{$laptop->display_size}}"</span>
-                        <span>Storage: {{$laptop->storage_size}} Gb</span>
-                        <span class="grey-span">Videocard: {{$laptop->videocard_name}}</span>
+                        <span>Display size: {{$laptop->display_size}}"</span>
+                        <span class="grey-span">Storage: {{$laptop->storage_size}} Gb</span>
+                        <span>Videocard: {{$laptop->videocard_name}}</span>
+                        <span class="grey-span">Passmark Score: {{$laptop->videocard->score}}</span>
                         <span>Battery: {{$laptop->battery}}</span>
                         <span class="grey-span">Price: {{$laptop->price}} $</span>
+
                     </div>
 
 
                 </div>
-
-            </div>
-
-            <div class="mt-5 text-center">
-
-                <a id="back-button" class="btn btn-teal btn-marketing rounded-pill lift lift-sm">Go Back</a>
 
             </div>
 

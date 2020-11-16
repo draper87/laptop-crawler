@@ -3,13 +3,13 @@ const Handlebars = require("handlebars");
 // var $ = require( "jquery" );
 
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-    // chiamata Ajax quando premo il tasto Invia
-    $('#bottone').click(function() {
+    // chiamata Ajax quando premo il tasto Search
+    $('#bottone').click(function () {
         chiamaLaptops();
         // eseguo scroll "ritardato", in modo che risulti piu fluido
-        setTimeout(function() {
+        setTimeout(function () {
             $('html, body').animate({
                 scrollTop: $("#show").offset().top
             }, 1000);
@@ -17,21 +17,34 @@ $(document).ready(function() {
 
     })
 
+    // bottone form reset
+    $('#reset').click(function () {
+        event.preventDefault();
+        mySliderPrice.setValues(1,6000);
+        mySlider.setValues(10.1, 17.3);
+        $('#rambettercheckbox').lcs_off();
+        $('#videocardbettercheckbox').lcs_off();
+        $('#cpubettercheckbox').lcs_off();
+        $('.js-basic-single-videocard').val(null).trigger('change');
+        $('.js-basic-single-cpu').val(null).trigger('change');
+        $('.js-basic-multiple-ram').val(null).trigger('change');
+    })
+
     // metto in una variabile il valore scelto dall utente della select "video_card"
     var videocard;
-    $("#videocard").change(function(){
+    $("#videocard").change(function () {
         videocard = $('#videocard').val();
     })
 
     // metto in una variabile il valore scelto dall utente della select "cpu"
     var cpu;
-    $("#cpu").change(function(){
+    $("#cpu").change(function () {
         cpu = $('#cpu').val();
     })
 
     // metto in una variabile il valore scelto dall utente della select "ram"
     var ram;
-    $("#ram_memory").change(function(){
+    $("#ram_memory").change(function () {
         ram = $('#ram_memory').val();
     })
 
@@ -39,36 +52,30 @@ $(document).ready(function() {
     // funzione che fa chiamata Ajax all mia API su laravel
     function chiamaLaptops(page) {
 
-            $.ajax({
-                url: 'http://127.0.0.1:8000/api/laptops',
-                method: 'GET',
-                data: {
-                    video_card: videocard,
-                    cpu: cpu,
-                    ram: ram,
-                    ramchecked: ramchecked,
-                    display: mySlider.getValue(),
-                    price: mySliderPrice.getValue(),
-                    page: page,
-                },
-                success: function(dataResponse) {
-                    // sessionStorage.setItem('url', this.url);
-                    // console.log(sessionStorage.getItem('url'));
-                    numeroPagina(dataResponse["current_page"], dataResponse["last_page"]);
-                    stampaLaptops(dataResponse);
-                    console.log(dataResponse);
-                },
-                error: function() {
-                    alert('il server non funziona');
-                }
-            })
-        }
-
-
-    // back button
-    $('#back-button').click(function() {
-        window.history.back();
-    })
+        $.ajax({
+            url: 'http://127.0.0.1:8000/api/laptops',
+            method: 'GET',
+            data: {
+                video_card: videocard,
+                cpu: cpu,
+                ram: ram,
+                ramchecked: ramchecked,
+                coresChecked: coresChecked,
+                videocardChecked: videocardChecked,
+                display: mySlider.getValue(),
+                price: mySliderPrice.getValue(),
+                page: page,
+            },
+            success: function (dataResponse) {
+                // sessionStorage.setItem('url', this.url);
+                numeroPagina(dataResponse["current_page"], dataResponse["last_page"]);
+                stampaLaptops(dataResponse);
+            },
+            error: function () {
+                alert('il server non funziona');
+            }
+        })
+    }
 
 
     // funzione che usa handlebars per stampare i risultati ottenuti dalla chiamata Ajax
@@ -80,7 +87,7 @@ $(document).ready(function() {
         for (var i = 0; i < dataResponse.data.length; i++) {
             var context = dataResponse.data[i];
             // se non è disponibile un immagine per il laptop viene caricata quella di default
-            if(context['image_path'] === null) {
+            if (context['image_path'] === null) {
                 context['image_path'] = "images/laptop.jpg";
             }
             var html = template(context);
@@ -90,11 +97,12 @@ $(document).ready(function() {
     }
 
     // logica per la numerazione delle pagine
-    // dichiaro le mia variabili globali
+    // dichiaro le mie variabili globali
     var currentPage;
     var lastPage;
     var paginaSuccessiva;
     var paginaIndietro;
+
     // scrivo la logica per la numerazione delle pagine
     function numeroPagina(pagina, ultimaPagina) {
         currentPage = pagina;
@@ -102,14 +110,14 @@ $(document).ready(function() {
         if (currentPage < lastPage && currentPage !== 1) {
             paginaSuccessiva = pagina + 1;
             paginaIndietro = pagina - 1;
-        }
-        else if (currentPage === 1 && currentPage !== lastPage) {
+        } else if (currentPage === 1 && currentPage !== lastPage) {
             paginaSuccessiva = pagina + 1;
         } else {
             paginaIndietro = pagina - 1;
         }
 
     }
+
     // aggiungo un event listener per il bottone next
     $(document).on('click', '.next', function () {
         if (currentPage !== lastPage) {
@@ -132,7 +140,6 @@ $(document).ready(function() {
     }
 
 
-
     // range slider per il display size
     var mySlider;
     var mySliderPrice;
@@ -143,9 +150,9 @@ $(document).ready(function() {
             values: [10.1, 13.3, 14, 15.6, 16.1, 17, 17.3],
             range: true,
             set: null,
-            scale:    false,
-            labels:   false,
-            tooltip:  true,
+            scale: false,
+            labels: false,
+            tooltip: true,
             onChange: function (vals) {
                 // console.log(vals);
             }
@@ -153,12 +160,12 @@ $(document).ready(function() {
 
         mySliderPrice = new rSlider({
             target: '#sliderprice',
-            values: [0, 500, 750, 1000, 1250, 1500, 1750, 2000, 2500, 3000, 4000, 6000],
+            values: [1, 500, 750, 1000, 1250, 1500, 1750, 2000, 2500, 3000, 4000, 6000],
             range: true,
             set: null,
-            scale:    false,
-            labels:   false,
-            tooltip:  true,
+            scale: false,
+            labels: false,
+            tooltip: true,
             onChange: function (valsPrice) {
                 // console.log(valsPrice);
             }
@@ -166,38 +173,53 @@ $(document).ready(function() {
 
     };
 
+    // select per le videocard
     $('.js-basic-single-videocard').select2({
         placeholder: "Select your videocard",
         allowClear: true
     });
 
+    // select per CPU Cores
     $('.js-basic-single-cpu').select2({
-        placeholder: "Select your CPU",
+        placeholder: "Select your CPU # Cores",
         allowClear: true
     });
 
+    // select per memoria ram
     $('.js-basic-multiple-ram').select2({
         placeholder: "Select your ram amount",
         allowClear: true
     });
 
-    // Switch script
+    // Switcher (tasti on-off relativi alle select)
     $('#rambettercheckbox').lc_switch('', '');
     var ramchecked = 0;
-    $('body').delegate('#rambettercheckbox', 'lcs-on', function() {
+    $('body').delegate('#rambettercheckbox', 'lcs-on', function () {
         ramchecked = 1;
         // console.log(ramchecked);
     });
-    $('body').delegate('#rambettercheckbox', 'lcs-off', function() {
+    $('body').delegate('#rambettercheckbox', 'lcs-off', function () {
         ramchecked = 0;
         // console.log(ramchecked);
     });
 
     $('#videocardbettercheckbox').lc_switch('', '');
+    var videocardChecked = 0;
+    $('body').delegate('#videocardbettercheckbox', 'lcs-on', function () {
+        videocardChecked = 1;
+    });
+    $('body').delegate('#videocardbettercheckbox', 'lcs-off', function () {
+        videocardChecked = 0;
+    });
 
     $('#cpubettercheckbox').lc_switch('', '');
-
-
+    var coresChecked = 0;
+    $('body').delegate('#cpubettercheckbox', 'lcs-on', function () {
+        coresChecked = 1;
+    });
+    $('body').delegate('#cpubettercheckbox', 'lcs-off', function () {
+        coresChecked = 0;
+    });
 
 
     // La parte qui sotto è relativa al tema, non toccare!!
@@ -221,7 +243,7 @@ $(document).ready(function() {
     });
 
     // Scrolls to an offset anchor when a sticky nav link is clicked
-    $('.nav-sticky a.nav-link[href*="#"]:not([href="#"])').click(function() {
+    $('.nav-sticky a.nav-link[href*="#"]:not([href="#"])').click(function () {
         if (
             location.pathname.replace(/^\//, "") ==
             this.pathname.replace(/^\//, "") &&
@@ -242,8 +264,8 @@ $(document).ready(function() {
 
     // Collapse Navbar
     // Add styling fallback for when a transparent background .navbar-marketing is scrolled
-    var navbarCollapse = function() {
-        if($(".navbar-marketing.bg-transparent.fixed-top").length === 0) {
+    var navbarCollapse = function () {
+        if ($(".navbar-marketing.bg-transparent.fixed-top").length === 0) {
             return;
         }
         if ($(".navbar-marketing.bg-transparent.fixed-top").offset().top > 0) {

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -22,11 +25,16 @@
     <list default="true" id="246335cc-7650-43ad-a818-7efc98aa85ff" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../../../../MAMP/htdocs/testami-master/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../MAMP/htdocs/testami-master/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/Invia.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Invia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/2/Z/43TNBNvtOvXajFsfINow" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/2/Z/43TNBNvtOvXajFsfINow" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Cpu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cpu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/LaptopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/LaptopController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Laptop.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Laptop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Videocard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Videocard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +49,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="JsBowerSettings">
     <node-interpreter value="project" />
@@ -176,12 +185,13 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/storage/app/public/images" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -270,7 +280,11 @@
       <workItem from="1605177046871" duration="210000" />
       <workItem from="1605177477094" duration="231000" />
       <workItem from="1605259875725" duration="24567000" />
-      <workItem from="1605367113420" duration="12203000" />
+      <workItem from="1605367113420" duration="12901000" />
+      <workItem from="1605391327195" duration="2077000" />
+      <workItem from="1605453176904" duration="13028000" />
+      <workItem from="1605471631838" duration="6138000" />
+      <workItem from="1605517865165" duration="4507000" />
     </task>
     <servers />
   </component>
@@ -302,14 +316,22 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="526" y="241" key="#Notifications/0.0.1536.834@0.0.1536.834" timestamp="1599924261512" />
+    <state x="194" y="259" key="#SQL_Dialects" timestamp="1605461846412">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="194" y="259" key="#SQL_Dialects/0.0.1536.834@0.0.1536.834" timestamp="1605461846412" />
+    <state x="441" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605462001035">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="441" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1605462001035" />
     <state x="498" y="197" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper" timestamp="1599491155511">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="498" y="197" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/0.0.1536.834@0.0.1536.834" timestamp="1599491155511" />
-    <state x="466" y="252" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1599818798617">
+    <state x="466" y="252" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1605391569086">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="466" y="252" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.834@0.0.1536.834" timestamp="1599818798617" />
+    <state x="466" y="252" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.834@0.0.1536.834" timestamp="1605391569086" />
     <state x="545" y="330" key="ComposerInitDialogKey" timestamp="1599162144765">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -342,10 +364,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="604" y="341" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1605278666280" />
-    <state x="277" y="62" key="SettingsEditor" timestamp="1600596608174">
+    <state x="277" y="62" key="SettingsEditor" timestamp="1605393376505">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="277" y="62" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1600596608174" />
+    <state x="277" y="62" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1605393376505" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1600618180992">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

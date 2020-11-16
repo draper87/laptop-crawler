@@ -32,8 +32,16 @@
                             <div class="mb-3">
                                 <select class="w-25 js-basic-single-cpu" name="cpu" id="cpu">
                                     <option></option>
-                                    @foreach ($cpus as $cpu)
-                                        <option value="{{ $cpu->name }}">{{ $cpu->name }}</option>
+                                    @php
+                                        foreach ($cpus as $cpu){
+                                            $array_cores[] = $cpu->cores;
+                                            $array_unique_cores = array_unique($array_cores);
+                                        }
+
+                                        sort($array_unique_cores);
+                                    @endphp
+                                    @foreach ($array_unique_cores as $core)
+                                        <option value="{{ $core }}">{{ $core }}</option>
                                     @endforeach
                                 </select>
                                 <span class="pr-2 pl-2">Or better</span>
@@ -49,13 +57,13 @@
                                     {{--    dal loro model, forse è il caso di creare una model anche per la Ram?--}}
                                     @php
                                         foreach ($laptops as $laptop){
-                                            $array[] = $laptop->ram_memory;
-                                            $array_unique = array_unique($array);
+                                            $array_ram[] = $laptop->ram_memory;
+                                            $array_unique_ram = array_unique($array_ram);
                                         }
 
-                                        sort($array_unique);
+                                        sort($array_unique_ram);
                                     @endphp
-                                    @foreach ($array_unique as $ram) {
+                                    @foreach ($array_unique_ram as $ram) {
                                     <option value="{{ $ram }}">{{ $ram }}Gb</option>
                                     @endforeach
                                 </select>
@@ -68,6 +76,9 @@
                             <div><label for="sliderprice">Price Range (USD)</label><input type="text" id="sliderprice" class="slider" hidden></div>
 
                             <input class="mt-5 btn btn-teal btn-marketing rounded-pill lift lift-sm" id="bottone" value="Search">
+
+                            <button class="ml-5 mt-5 btn btn-teal btn-marketing rounded-pill lift lift-sm" id="reset">Reset</button>
+
                         </form>
 
                     </div>

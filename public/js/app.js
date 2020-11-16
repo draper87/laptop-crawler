@@ -24415,7 +24415,7 @@ var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebar
 
 
 $(document).ready(function () {
-  // chiamata Ajax quando premo il tasto Invia
+  // chiamata Ajax quando premo il tasto Search
   $('#bottone').click(function () {
     chiamaLaptops(); // eseguo scroll "ritardato", in modo che risulti piu fluido
 
@@ -24424,6 +24424,18 @@ $(document).ready(function () {
         scrollTop: $("#show").offset().top
       }, 1000);
     }, 500);
+  }); // bottone form reset
+
+  $('#reset').click(function () {
+    event.preventDefault();
+    mySliderPrice.setValues(1, 6000);
+    mySlider.setValues(10.1, 17.3);
+    $('#rambettercheckbox').lcs_off();
+    $('#videocardbettercheckbox').lcs_off();
+    $('#cpubettercheckbox').lcs_off();
+    $('.js-basic-single-videocard').val(null).trigger('change');
+    $('.js-basic-single-cpu').val(null).trigger('change');
+    $('.js-basic-multiple-ram').val(null).trigger('change');
   }); // metto in una variabile il valore scelto dall utente della select "video_card"
 
   var videocard;
@@ -24450,27 +24462,23 @@ $(document).ready(function () {
         cpu: cpu,
         ram: ram,
         ramchecked: ramchecked,
+        coresChecked: coresChecked,
+        videocardChecked: videocardChecked,
         display: mySlider.getValue(),
         price: mySliderPrice.getValue(),
         page: page
       },
       success: function success(dataResponse) {
         // sessionStorage.setItem('url', this.url);
-        // console.log(sessionStorage.getItem('url'));
         numeroPagina(dataResponse["current_page"], dataResponse["last_page"]);
         stampaLaptops(dataResponse);
-        console.log(dataResponse);
       },
       error: function error() {
         alert('il server non funziona');
       }
     });
-  } // back button
+  } // funzione che usa handlebars per stampare i risultati ottenuti dalla chiamata Ajax
 
-
-  $('#back-button').click(function () {
-    window.history.back();
-  }); // funzione che usa handlebars per stampare i risultati ottenuti dalla chiamata Ajax
 
   function stampaLaptops(dataResponse) {
     $('.lista').html('');
@@ -24491,7 +24499,7 @@ $(document).ready(function () {
 
     stampaPagination(dataResponse['total'], dataResponse['current_page'], dataResponse['last_page']);
   } // logica per la numerazione delle pagine
-  // dichiaro le mia variabili globali
+  // dichiaro le mie variabili globali
 
 
   var currentPage;
@@ -24550,7 +24558,7 @@ $(document).ready(function () {
     });
     mySliderPrice = new rSlider({
       target: '#sliderprice',
-      values: [0, 500, 750, 1000, 1250, 1500, 1750, 2000, 2500, 3000, 4000, 6000],
+      values: [1, 500, 750, 1000, 1250, 1500, 1750, 2000, 2500, 3000, 4000, 6000],
       range: true,
       set: null,
       scale: false,
@@ -24559,20 +24567,23 @@ $(document).ready(function () {
       onChange: function onChange(valsPrice) {// console.log(valsPrice);
       }
     });
-  };
+  }; // select per le videocard
+
 
   $('.js-basic-single-videocard').select2({
     placeholder: "Select your videocard",
     allowClear: true
-  });
+  }); // select per CPU Cores
+
   $('.js-basic-single-cpu').select2({
-    placeholder: "Select your CPU",
+    placeholder: "Select your CPU # Cores",
     allowClear: true
-  });
+  }); // select per memoria ram
+
   $('.js-basic-multiple-ram').select2({
     placeholder: "Select your ram amount",
     allowClear: true
-  }); // Switch script
+  }); // Switcher (tasti on-off relativi alle select)
 
   $('#rambettercheckbox').lc_switch('', '');
   var ramchecked = 0;
@@ -24583,7 +24594,21 @@ $(document).ready(function () {
     ramchecked = 0; // console.log(ramchecked);
   });
   $('#videocardbettercheckbox').lc_switch('', '');
-  $('#cpubettercheckbox').lc_switch('', ''); // La parte qui sotto è relativa al tema, non toccare!!
+  var videocardChecked = 0;
+  $('body').delegate('#videocardbettercheckbox', 'lcs-on', function () {
+    videocardChecked = 1;
+  });
+  $('body').delegate('#videocardbettercheckbox', 'lcs-off', function () {
+    videocardChecked = 0;
+  });
+  $('#cpubettercheckbox').lc_switch('', '');
+  var coresChecked = 0;
+  $('body').delegate('#cpubettercheckbox', 'lcs-on', function () {
+    coresChecked = 1;
+  });
+  $('body').delegate('#cpubettercheckbox', 'lcs-off', function () {
+    coresChecked = 0;
+  }); // La parte qui sotto è relativa al tema, non toccare!!
   // Enable Bootstrap tooltips via data-attributes globally
 
   $('[data-toggle="tooltip"]').tooltip(); // Enable Bootstrap popovers via data-attributes globally

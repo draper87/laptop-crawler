@@ -169,6 +169,10 @@ class Invia extends Command
             //    uso if in quanto se non trova risultati va in errore
             if ($pageResultCrawler->filter('.specs_element')->eq(0)->children('.specs_details a')->count() > 0) {
                 $cpuDetails['name'] = $pageResultCrawler->filter('.specs_element')->eq(0)->children('.specs_details a')->text();
+                $cpuDetails_cores = $pageResultCrawler->filter('.specs_element')->eq(0)->text();
+                $cpuDetails_cores_regex = findSpeed('\d\sx', $cpuDetails_cores);
+                $cpuDetails_cores_regex_plus = findSpeed('\d', $cpuDetails_cores_regex);
+                $cpuDetails['cores'] = $cpuDetails_cores_regex_plus;
                 $laptopDetails['cpu_name'] = $pageResultCrawler->filter('.specs_element')->eq(0)->children('.specs_details a')->text();
             }
 
@@ -221,6 +225,9 @@ class Invia extends Command
             $specifications_cpu[] = $cpuDetails;
 
             var_dump($laptopDetails);
+
+            var_dump($cpuDetails);
+
 
             die();
 

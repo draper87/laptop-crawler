@@ -11,6 +11,8 @@ class Videocard extends Model
         'score'
     ];
 
+//    protected $primaryKey = 'name';
+
     public function laptops() {
         return $this->hasMany('App\Laptop');
     }
