@@ -1,15 +1,3 @@
-// Parte relativa al range slider
-.rs-container {
-    width: 50%;
-    margin: 0 auto;
-}
-.rs-container .rs-scale span ins {
-    color: white;
-}
-.rs-scale span {
-    display: none;
-}
-
 // parte relativa alla thumbnail
 .laptop-img {
     height: 300px;
@@ -27,6 +15,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+// parte relativa al layout del form
+.form-container {
+    display: flex;
+    justify-content: center;
+    #form-left {
+        width: 60%;
+    }
+    #form-right {
+        width: 30%;
+    }
 }
 
 

@@ -19,6 +19,7 @@ class Laptop extends Model
         'storage_size',
         'videocard_name',
         'battery',
+        'weight',
         'price',
         'image_path',
     ];

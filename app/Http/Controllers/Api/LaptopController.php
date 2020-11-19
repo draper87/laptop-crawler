@@ -63,6 +63,14 @@ class LaptopController extends Controller
             $queryLaptop->whereBetween('display_size', [$display1, $display2]);
         }
 
+        // restituisco solamente i risultati con il peso selezionato
+        if ($laptop_weight = $request->get('mySliderWeight')) {
+            $laptop_weight_array = explode(",", $laptop_weight);
+            $laptop_weight_array_1 = intval($laptop_weight_array[0]);
+            $laptop_weight_array_2 = intval($laptop_weight_array[1]);
+            $queryLaptop->whereBetween('weight',[$laptop_weight_array_1, $laptop_weight_array_2]);
+        }
+
         // restituisco solamente i risultati con il prezzo selezionato
         if ($price = $request->get('price')){
             $price_array = explode(",", $price); // price è una stringa, uso explode per ottenere un array di 2 numeri

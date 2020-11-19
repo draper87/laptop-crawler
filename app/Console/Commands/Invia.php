@@ -50,16 +50,13 @@ class Invia extends Command
         ini_set('display_startup_errors', 1);
         error_reporting(E_ALL);
 
-        // require __DIR__ . '/vendor/autoload.php';
-
         // funzione che usa le regex per estrapolare i dati
-        function findSpeed($pattern, $stringa)
+        function regex($pattern, $stringa)
         {
             preg_match("/$pattern/i", $stringa, $matches);
 
             return implode(",", $matches);
         }
-
 
 
         $cache = new FilesystemAdapter('cache', 3600, __DIR__);
@@ -138,7 +135,7 @@ class Invia extends Command
 
             // estraggo ID univoco
             $id_laptop = $link;
-            $id_laptop_regex = findSpeed('\d\d\d\d\d\d', $id_laptop);
+            $id_laptop_regex = regex('\d\d\d\d\d\d', $id_laptop);
             $laptopDetails['laptop_id'] = $id_laptop_regex;
 
             // estraggo il nome
@@ -149,7 +146,7 @@ class Invia extends Command
 
             // estraggo la ram
             $ram_memory = $pageResultCrawler->filter('.specs_element')->eq(2)->text();
-            $ram_memory_regex = findSpeed('\d{4,6}', $ram_memory);
+            $ram_memory_regex = regex('\d{4,6}', $ram_memory);
             $ram_memory_refactored = floor($ram_memory_regex / 1000);
             $laptopDetails['ram_memory'] = $ram_memory_refactored;
 
@@ -170,20 +167,20 @@ class Invia extends Command
             if ($pageResultCrawler->filter('.specs_element')->eq(0)->children('.specs_details a')->count() > 0) {
                 $cpuDetails['name'] = $pageResultCrawler->filter('.specs_element')->eq(0)->children('.specs_details a')->text();
                 $cpuDetails_cores = $pageResultCrawler->filter('.specs_element')->eq(0)->text();
-                $cpuDetails_cores_regex = findSpeed('\d\sx', $cpuDetails_cores);
-                $cpuDetails_cores_regex_plus = findSpeed('\d', $cpuDetails_cores_regex);
+                $cpuDetails_cores_regex = regex('\d\sx', $cpuDetails_cores);
+                $cpuDetails_cores_regex_plus = regex('\d', $cpuDetails_cores_regex);
                 $cpuDetails['cores'] = $cpuDetails_cores_regex_plus;
                 $laptopDetails['cpu_name'] = $pageResultCrawler->filter('.specs_element')->eq(0)->children('.specs_details a')->text();
             }
 
             // estraggo dimensioni display
             $display_size = $pageResultCrawler->filter('.specs_element')->eq(3)->children('.specs_details')->text();
-            $display_size_regex = findSpeed('\d\d\.?\d?', $display_size);
+            $display_size_regex = regex('\d\d\.?\d?', $display_size);
             $laptopDetails['display_size'] = $display_size_regex;
 
             // estraggo storage
             $storage_size = $pageResultCrawler->filter('.specs_element')->eq(5)->children('.specs_details')->text();
-            $storage_size_regex = findSpeed('\s\d{3,4}', $storage_size);
+            $storage_size_regex = regex('\s\d{3,4}', $storage_size);
             $laptopDetails['storage_size'] = $storage_size_regex;
 
             // estraggo scheda video
@@ -193,25 +190,41 @@ class Invia extends Command
             // estraggo batteria
             try {
                 $battery_life = $pageResultCrawler->filter('.nbc_additional_specs .specs_element')->eq(4)->children('.specs_details')->text();
-                $battery_life_regex = findSpeed('\d\d\.?\d?', $battery_life);
+                $battery_life_regex = regex('\d\d\.?\d?', $battery_life);
                 $laptopDetails['battery'] = $battery_life_regex;
             } catch (Throwable $e) {
                 echo 'Eccezione: ' . $e->getMessage();
             }
 
-//            // estraggo peso laptop_Non_Usare
-//            try {
-//                $laptop_weight = $pageResultCrawler->filter('.specs_element')->eq(14)->children('.specs_details')->text();
-//                $laptop_weight_regex = findSpeed('\d\.\d\d?\d?', $laptop_weight);
-//                $laptopDetails['weight'] = $laptop_weight_regex;
-//            } catch (Throwable $e) {
-//                echo 'Eccezione: ' . $e->getMessage();
-//            }
+            // estraggo peso laptop
+            $laptop_price_next = 'no';
+            try {
+                $laptop_weight = $pageResultCrawler->filter('.specs_element')->eq(14)->children('.specs_details')->text();
+                $laptop_weight_regex = regex('\d\.\d\d?\d?', $laptop_weight);
+                if ($laptop_weight_regex === '') { // se non trovo nulla in posizione 14 vado in posizione 15
+                    $laptop_price_next = 'yes'; // se vado in posizione 15 devo far slittare alla posizione 16 il prezzo
+                    $laptop_weight = $pageResultCrawler->filter('.specs_element')->eq(15)->children('.specs_details')->text();
+                    $laptop_weight_regex = regex('\d\.\d\d?\d?', $laptop_weight);
+                    if ($laptop_weight_regex === '') {
+                        $laptop_weight_regex = 0;
+                    }
+                }
+                $laptopDetails['weight'] = $laptop_weight_regex;
+            } catch (Throwable $e) {
+                echo 'Eccezione: ' . $e->getMessage();
+            }
 
             // estraggo prezzo laptop
             try {
                 $laptop_price = $pageResultCrawler->filter('.specs_element')->eq(15)->children('.specs_details')->text();
-                $laptop_price_regex = findSpeed('\d\d\d\d?', $laptop_price);
+                $laptop_price_regex = regex('\d\d\d\d?', $laptop_price);
+                if ($laptop_price_next === 'yes') { // faccio slittare alla posizione 16 se la 15 é occupata dal peso
+                    $laptop_price = $pageResultCrawler->filter('.specs_element')->eq(16)->children('.specs_details')->text();
+                    $laptop_price_regex = regex('\d\d\d\d?', $laptop_price);
+                    if ($laptop_price_regex === '') {
+                        $laptop_price_regex = 0;
+                    }
+                }
                 $laptopDetails['price'] = $laptop_price_regex;
             } catch (Throwable $e) {
                 echo 'Eccezione: ' . $e->getMessage();
@@ -225,11 +238,11 @@ class Invia extends Command
             $specifications_cpu[] = $cpuDetails;
 
             var_dump($laptopDetails);
-
-            var_dump($cpuDetails);
-
-
-            die();
+//
+//            var_dump($cpuDetails);
+//
+//
+//            die();
 
         }
 

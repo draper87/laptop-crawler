@@ -24411,9 +24411,22 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js"); // var $ = require( "jquery" );
+var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js"); // range slider
 
 
+var slider = document.getElementById('slider');
+noUiSlider.create(slider, {
+  start: [0, 100],
+  connect: true,
+  range: {
+    'min': 0,
+    'max': 100
+  }
+});
+var nonLinearStepSliderValueElement = document.getElementById('slider-value');
+slider.noUiSlider.on('update', function (values) {
+  nonLinearStepSliderValueElement.innerHTML = values.join(' - ');
+});
 $(document).ready(function () {
   // chiamata Ajax quando premo il tasto Search
   $('#bottone').click(function () {
@@ -24428,8 +24441,6 @@ $(document).ready(function () {
 
   $('#reset').click(function () {
     event.preventDefault();
-    mySliderPrice.setValues(1, 6000);
-    mySlider.setValues(10.1, 17.3);
     $('#rambettercheckbox').lcs_off();
     $('#videocardbettercheckbox').lcs_off();
     $('#cpubettercheckbox').lcs_off();
@@ -24464,8 +24475,9 @@ $(document).ready(function () {
         ramchecked: ramchecked,
         coresChecked: coresChecked,
         videocardChecked: videocardChecked,
-        display: mySlider.getValue(),
+        display: mySliderDisplay.getValue(),
         price: mySliderPrice.getValue(),
+        mySliderWeight: mySliderWeight.getValue(),
         page: page
       },
       success: function success(dataResponse) {
@@ -24536,38 +24548,9 @@ $(document).ready(function () {
 
   function stampaPagination(total, current, last) {
     $('#pagina').html('');
-    var html = "<p>Found " + total + " results. Page " + current + " of " + last + "</p><ul class=\"pagination \"><li class=\"page-item\"><a class=\"page-link previous\">Indietro</a></li>" + " <li class=\"page-item\"><a class=\"page-link next\" >Avanti</a></li></ul>";
+    var html = "<p>Found " + total + " results. Page " + current + " of " + last + "</p><ul class=\"pagination \"><li class=\"page-item\"><a class=\"page-link previous\">Previous</a></li>" + " <li class=\"page-item\"><a class=\"page-link next\" >Next</a></li></ul>";
     $('#pagina').append(html);
-  } // range slider per il display size
-
-
-  var mySlider;
-  var mySliderPrice;
-
-  window.onload = function () {
-    mySlider = new rSlider({
-      target: '#sliderdisplay',
-      values: [10.1, 13.3, 14, 15.6, 16.1, 17, 17.3],
-      range: true,
-      set: null,
-      scale: false,
-      labels: false,
-      tooltip: true,
-      onChange: function onChange(vals) {// console.log(vals);
-      }
-    });
-    mySliderPrice = new rSlider({
-      target: '#sliderprice',
-      values: [1, 500, 750, 1000, 1250, 1500, 1750, 2000, 2500, 3000, 4000, 6000],
-      range: true,
-      set: null,
-      scale: false,
-      labels: false,
-      tooltip: true,
-      onChange: function onChange(valsPrice) {// console.log(valsPrice);
-      }
-    });
-  }; // select per le videocard
+  } // select per le videocard
 
 
   $('.js-basic-single-videocard').select2({
@@ -24585,7 +24568,7 @@ $(document).ready(function () {
     allowClear: true
   }); // Switcher (tasti on-off relativi alle select)
 
-  $('#rambettercheckbox').lc_switch('', '');
+  $('#rambettercheckbox').lc_switch('Yes', 'No');
   var ramchecked = 0;
   $('body').delegate('#rambettercheckbox', 'lcs-on', function () {
     ramchecked = 1; // console.log(ramchecked);
@@ -24593,7 +24576,7 @@ $(document).ready(function () {
   $('body').delegate('#rambettercheckbox', 'lcs-off', function () {
     ramchecked = 0; // console.log(ramchecked);
   });
-  $('#videocardbettercheckbox').lc_switch('', '');
+  $('#videocardbettercheckbox').lc_switch('Yes', 'No');
   var videocardChecked = 0;
   $('body').delegate('#videocardbettercheckbox', 'lcs-on', function () {
     videocardChecked = 1;
@@ -24601,7 +24584,7 @@ $(document).ready(function () {
   $('body').delegate('#videocardbettercheckbox', 'lcs-off', function () {
     videocardChecked = 0;
   });
-  $('#cpubettercheckbox').lc_switch('', '');
+  $('#cpubettercheckbox').lc_switch('Yes', 'No');
   var coresChecked = 0;
   $('body').delegate('#cpubettercheckbox', 'lcs-on', function () {
     coresChecked = 1;

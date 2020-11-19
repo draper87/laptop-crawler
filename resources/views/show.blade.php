@@ -65,7 +65,8 @@
                         <span>Videocard: {{$laptop->videocard_name}}</span>
                         <span class="grey-span">Passmark Score: {{$laptop->videocard->score}}</span>
                         <span>Battery: {{$laptop->battery}}</span>
-                        <span class="grey-span">Price: {{$laptop->price}} $</span>
+                        <span class="grey-span">Weight: {{$laptop->weight}} Kg</span>
+                        <span>Price: {{$laptop->price}} $</span>
 
                     </div>
 

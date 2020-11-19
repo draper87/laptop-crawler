@@ -1,6 +1,17 @@
 require('./bootstrap');
 const Handlebars = require("handlebars");
-// var $ = require( "jquery" );
+
+// range slider da testare
+var slider = document.getElementById('slider');
+
+noUiSlider.create(slider, {
+    start: [0, 100],
+    connect: true,
+    range: {
+        'min': 0,
+        'max': 100
+    }
+});
 
 
 $(document).ready(function () {
@@ -20,8 +31,6 @@ $(document).ready(function () {
     // bottone form reset
     $('#reset').click(function () {
         event.preventDefault();
-        mySliderPrice.setValues(1,6000);
-        mySlider.setValues(10.1, 17.3);
         $('#rambettercheckbox').lcs_off();
         $('#videocardbettercheckbox').lcs_off();
         $('#cpubettercheckbox').lcs_off();
@@ -62,8 +71,9 @@ $(document).ready(function () {
                 ramchecked: ramchecked,
                 coresChecked: coresChecked,
                 videocardChecked: videocardChecked,
-                display: mySlider.getValue(),
+                display: mySliderDisplay.getValue(),
                 price: mySliderPrice.getValue(),
+                mySliderWeight: mySliderWeight.getValue(),
                 page: page,
             },
             success: function (dataResponse) {
@@ -135,43 +145,12 @@ $(document).ready(function () {
     // stampo a schermo i bottoni della pagination
     function stampaPagination(total, current, last) {
         $('#pagina').html('');
-        var html = "<p>Found " + total + " results. Page " + current + " of " + last + "</p><ul class=\"pagination \"><li class=\"page-item\"><a class=\"page-link previous\">Indietro</a></li>" + " <li class=\"page-item\"><a class=\"page-link next\" >Avanti</a></li></ul>";
+        var html = "<p>Found " + total + " results. Page " + current + " of " + last + "</p><ul class=\"pagination \"><li class=\"page-item\"><a class=\"page-link previous\">Previous</a></li>" + " <li class=\"page-item\"><a class=\"page-link next\" >Next</a></li></ul>";
         $('#pagina').append(html);
     }
 
 
-    // range slider per il display size
-    var mySlider;
-    var mySliderPrice;
-    window.onload = function () {
 
-        mySlider = new rSlider({
-            target: '#sliderdisplay',
-            values: [10.1, 13.3, 14, 15.6, 16.1, 17, 17.3],
-            range: true,
-            set: null,
-            scale: false,
-            labels: false,
-            tooltip: true,
-            onChange: function (vals) {
-                // console.log(vals);
-            }
-        });
-
-        mySliderPrice = new rSlider({
-            target: '#sliderprice',
-            values: [1, 500, 750, 1000, 1250, 1500, 1750, 2000, 2500, 3000, 4000, 6000],
-            range: true,
-            set: null,
-            scale: false,
-            labels: false,
-            tooltip: true,
-            onChange: function (valsPrice) {
-                // console.log(valsPrice);
-            }
-        });
-
-    };
 
     // select per le videocard
     $('.js-basic-single-videocard').select2({
@@ -192,7 +171,7 @@ $(document).ready(function () {
     });
 
     // Switcher (tasti on-off relativi alle select)
-    $('#rambettercheckbox').lc_switch('', '');
+    $('#rambettercheckbox').lc_switch('Yes', 'No');
     var ramchecked = 0;
     $('body').delegate('#rambettercheckbox', 'lcs-on', function () {
         ramchecked = 1;
@@ -203,7 +182,7 @@ $(document).ready(function () {
         // console.log(ramchecked);
     });
 
-    $('#videocardbettercheckbox').lc_switch('', '');
+    $('#videocardbettercheckbox').lc_switch('Yes', 'No');
     var videocardChecked = 0;
     $('body').delegate('#videocardbettercheckbox', 'lcs-on', function () {
         videocardChecked = 1;
@@ -212,7 +191,7 @@ $(document).ready(function () {
         videocardChecked = 0;
     });
 
-    $('#cpubettercheckbox').lc_switch('', '');
+    $('#cpubettercheckbox').lc_switch('Yes', 'No');
     var coresChecked = 0;
     $('body').delegate('#cpubettercheckbox', 'lcs-on', function () {
         coresChecked = 1;

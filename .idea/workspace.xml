@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
@@ -23,18 +26,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="246335cc-7650-43ad-a818-7efc98aa85ff" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/nouislider.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/nouislider.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../MAMP/htdocs/testami-master/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../MAMP/htdocs/testami-master/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/Invia.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Invia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/0/7/WHMrwpizIrACuP61P-5g" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/0/7/WHMrwpizIrACuP61P-5g" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/2/+/jxTbWV456WoF7+PnB0SA" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/2/+/jxTbWV456WoF7+PnB0SA" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/2/Z/43TNBNvtOvXajFsfINow" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/2/Z/43TNBNvtOvXajFsfINow" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Cpu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cpu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/A/G/LvSjhrQ7N1uhPoHHUR9A" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/A/G/LvSjhrQ7N1uhPoHHUR9A" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/C/D/yBOGLC9DAWaeADxSGqAQ" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/C/D/yBOGLC9DAWaeADxSGqAQ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/C/E/-1T6-uPetK-X4yIcf+YQ" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/C/E/-1T6-uPetK-X4yIcf+YQ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/D/3/UW4cTnXReDRiPw6j7MFA" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/D/3/UW4cTnXReDRiPw6j7MFA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/D/U/+Fen1PAXHfF0t4aK4o9A" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/D/U/+Fen1PAXHfF0t4aK4o9A" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/F/4/Pab3pd7XO3VeW2PcnAnQ" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/F/4/Pab3pd7XO3VeW2PcnAnQ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/H/C/Nf4AGoTKksaWudt8BPFQ" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/H/C/Nf4AGoTKksaWudt8BPFQ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/H/J/jGyQSj1tTNaB+jeOlggA" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/H/J/jGyQSj1tTNaB+jeOlggA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/I/H/GyLoaL-gQlhkQa4mxyHA" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/I/H/GyLoaL-gQlhkQa4mxyHA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/J/1/3dfElD3FAwNY8XYgji0A" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/J/1/3dfElD3FAwNY8XYgji0A" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/J/I/PikkSnywKMvJPs+rR2uA" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/J/I/PikkSnywKMvJPs+rR2uA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/K/D/vxA30jf6gX8jSseIQZeQ" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/K/D/vxA30jf6gX8jSseIQZeQ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/L/O/u9BtiuvZbCAjK5FfU8Tw" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/L/O/u9BtiuvZbCAjK5FfU8Tw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/N/W/EARNvCKLbPIlNQSCCuhQ" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/N/W/EARNvCKLbPIlNQSCCuhQ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/P/V/GxV9yuH3pkuwdTlnEiDw" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/P/V/GxV9yuH3pkuwdTlnEiDw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/Q/+/EiTlxmZOtwx7RGnRZVsA" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/Q/+/EiTlxmZOtwx7RGnRZVsA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/S/J/K3Gqwlbs3KZk5tHCPsQg" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/S/J/K3Gqwlbs3KZk5tHCPsQg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/S/O/ug5bmss+Z3uxLnG0ATtw" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/S/O/ug5bmss+Z3uxLnG0ATtw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/S/Q/JkYetiARx1AZicgIRTLw" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/S/Q/JkYetiARx1AZicgIRTLw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/U/G/THbUPK6dmbPgAa-nxvkg" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/U/G/THbUPK6dmbPgAa-nxvkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/W/B/jWcED54cTNCG6l+FUxYg" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/W/B/jWcED54cTNCG6l+FUxYg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/Y/P/+hTaQi5n-e677dmqGzlQ" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/Y/P/+hTaQi5n-e677dmqGzlQ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/cache/Z/E/+-FuPHFWRi8K4Yfq3Huw" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/cache/Z/E/+-FuPHFWRi8K4Yfq3Huw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/LaptopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/LaptopController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Laptop.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Laptop.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Videocard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Videocard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/rSlider.min.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/rSlider.min.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/laptop_Non_Usare/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/laptop_Non_Usare/layout/app.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/laptop_Non_Usare/partials/header.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,23 +229,24 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/storage/app/public/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Console/Commands/cache" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\app\Console\Commands\cache" />
       <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\storage\app\public\images" />
       <recent name="C:\Users\drape\Desktop\Repo\theme-test" />
       <recent name="C:\Users\drape\Desktop\Repo\theme-test\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\app\Console\Commands" />
+      <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\public\js" />
+      <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\public\css" />
       <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\resources\views" />
       <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\resources\views\laptop" />
-      <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\public\css" />
-      <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\public\js" />
-      <recent name="C:\Users\drape\Desktop\Repo\progetto-laptop\public\assets\img" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.phpunit.xml">
@@ -284,7 +326,11 @@
       <workItem from="1605391327195" duration="2077000" />
       <workItem from="1605453176904" duration="13028000" />
       <workItem from="1605471631838" duration="6138000" />
-      <workItem from="1605517865165" duration="4507000" />
+      <workItem from="1605517865165" duration="6872000" />
+      <workItem from="1605535245842" duration="5367000" />
+      <workItem from="1605622350101" duration="6089000" />
+      <workItem from="1605708128716" duration="10996000" />
+      <workItem from="1605777897741" duration="1446000" />
     </task>
     <servers />
   </component>
@@ -328,10 +374,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="498" y="197" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/0.0.1536.834@0.0.1536.834" timestamp="1599491155511" />
-    <state x="466" y="252" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1605391569086">
+    <state x="466" y="252" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1605625992709">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="466" y="252" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.834@0.0.1536.834" timestamp="1605391569086" />
+    <state x="466" y="252" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.834@0.0.1536.834" timestamp="1605625992709" />
     <state x="545" y="330" key="ComposerInitDialogKey" timestamp="1599162144765">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
