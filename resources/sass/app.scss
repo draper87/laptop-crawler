@@ -22,11 +22,18 @@
     display: flex;
     justify-content: center;
     #form-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         width: 60%;
     }
     #form-right {
         width: 30%;
     }
+}
+
+#filters {
+    display: none;
 }
 
 

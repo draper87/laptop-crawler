@@ -9,22 +9,22 @@ use App\Cpu;
 
 class LaptopController extends Controller
 {
-    public function index() {
+    public function index()
+    {
 
         $laptops = Laptop::all();
-        $videocards = Videocard::query()->orderBy('name','asc')->get();
+        $videocards = Videocard::query()->orderBy('name', 'asc')->get();
         $cpus = Cpu::all();
 
-        return view('index', compact('laptops', 'videocards','cpus'));
+        return view('index', compact('laptops', 'videocards', 'cpus'));
     }
 
-    public function show(Laptop $laptop) {
+    public function show(Laptop $laptop)
+    {
 
         return view('show', compact('laptop'));
 
     }
-
-
 
 
 }

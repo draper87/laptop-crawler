@@ -1,18 +1,6 @@
 require('./bootstrap');
 const Handlebars = require("handlebars");
 
-// range slider da testare
-var slider = document.getElementById('slider');
-
-noUiSlider.create(slider, {
-    start: [0, 100],
-    connect: true,
-    range: {
-        'min': 0,
-        'max': 100
-    }
-});
-
 
 $(document).ready(function () {
 
@@ -37,6 +25,15 @@ $(document).ready(function () {
         $('.js-basic-single-videocard').val(null).trigger('change');
         $('.js-basic-single-cpu').val(null).trigger('change');
         $('.js-basic-multiple-ram').val(null).trigger('change');
+        sliderDisplay.noUiSlider.reset();
+        sliderWeight.noUiSlider.reset();
+        sliderPrice.noUiSlider.reset();
+    })
+
+    // bottone more filters
+    $('#moreFilters').click(function () {
+        event.preventDefault();
+        $('#filters').toggle();
     })
 
     // metto in una variabile il valore scelto dall utente della select "video_card"
@@ -57,6 +54,13 @@ $(document).ready(function () {
         ram = $('#ram_memory').val();
     })
 
+    // metto in una variabile il valore scelto dall utente dello slider laptop Noise
+    var laptopNoise;
+    $('input[type="range"]').change(function () {
+        laptopNoise = $('input[type="range"]').val();
+        console.log(laptopNoise);
+    })
+
 
     // funzione che fa chiamata Ajax all mia API su laravel
     function chiamaLaptops(page) {
@@ -71,9 +75,9 @@ $(document).ready(function () {
                 ramchecked: ramchecked,
                 coresChecked: coresChecked,
                 videocardChecked: videocardChecked,
-                display: mySliderDisplay.getValue(),
-                price: mySliderPrice.getValue(),
-                mySliderWeight: mySliderWeight.getValue(),
+                display: sliderDisplay.noUiSlider.get(),
+                price: sliderPrice.noUiSlider.get(),
+                mySliderWeight: sliderWeight.noUiSlider.get(),
                 page: page,
             },
             success: function (dataResponse) {
@@ -149,9 +153,7 @@ $(document).ready(function () {
         $('#pagina').append(html);
     }
 
-
-
-
+    // SELECT
     // select per le videocard
     $('.js-basic-single-videocard').select2({
         placeholder: "Select your videocard",
@@ -167,6 +169,12 @@ $(document).ready(function () {
     // select per memoria ram
     $('.js-basic-multiple-ram').select2({
         placeholder: "Select your ram amount",
+        allowClear: true
+    });
+
+    // select per lo chassis
+    $('.js-basic-single-chassis').select2({
+        placeholder: "Select your chassis material",
         allowClear: true
     });
 
@@ -200,63 +208,80 @@ $(document).ready(function () {
         coresChecked = 0;
     });
 
-
-    // La parte qui sotto è relativa al tema, non toccare!!
-    // Enable Bootstrap tooltips via data-attributes globally
-    $('[data-toggle="tooltip"]').tooltip();
-
-    // Enable Bootstrap popovers via data-attributes globally
-    $('[data-toggle="popover"]').popover();
-
-    $(".popover-dismiss").popover({
-        trigger: "focus"
+    $('#chassisbettercheckbox').lc_switch('Yes', 'No');
+    var chassisChecked = 0;
+    $('body').delegate('#chassisbettercheckbox', 'lcs-on', function () {
+        chassisChecked = 1;
+    });
+    $('body').delegate('#chassisbettercheckbox', 'lcs-off', function () {
+        chassisChecked = 0;
     });
 
-    // Activate Feather icons
-    // feather.replace();
+    // RANGE SLIDER
+    // range slider per il display size
+    var sliderDisplay = document.getElementById('sliderDisplay');
 
-    // Activate Bootstrap scrollspy for the sticky nav component
-    $("body").scrollspy({
-        target: "#stickyNav",
-        offset: 82
-    });
-
-    // Scrolls to an offset anchor when a sticky nav link is clicked
-    $('.nav-sticky a.nav-link[href*="#"]:not([href="#"])').click(function () {
-        if (
-            location.pathname.replace(/^\//, "") ==
-            this.pathname.replace(/^\//, "") &&
-            location.hostname == this.hostname
-        ) {
-            var target = $(this.hash);
-            target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
-            if (target.length) {
-                $("html, body").animate({
-                        scrollTop: target.offset().top - 81
-                    },
-                    200
-                );
-                return false;
-            }
+    noUiSlider.create(sliderDisplay, {
+        start: [10, 18],
+        connect: true,
+        step: 1,
+        range: {
+            'min': 10,
+            'max': 18
+        },
+        pips: {
+            mode: 'positions',
+            values: [0, 25, 50, 75, 100],
+            density: 15,
+            format: wNumb({
+                suffix: '"'
+            })
         }
     });
 
-    // Collapse Navbar
-    // Add styling fallback for when a transparent background .navbar-marketing is scrolled
-    var navbarCollapse = function () {
-        if ($(".navbar-marketing.bg-transparent.fixed-top").length === 0) {
-            return;
+    // range slider per il peso laptop
+    var sliderWeight = document.getElementById('sliderWeight');
+
+    noUiSlider.create(sliderWeight, {
+        start: [0, 5],
+        connect: true,
+        step: 1,
+        range: {
+            'min': 0,
+            'max': 5
+        },
+        pips: {
+            mode: 'positions',
+            values: [0, 20, 40, 60, 80, 100],
+            density: 15,
+            format: wNumb({
+                suffix: 'Kg'
+            })
         }
-        if ($(".navbar-marketing.bg-transparent.fixed-top").offset().top > 0) {
-            $(".navbar-marketing").addClass("navbar-scrolled");
-        } else {
-            $(".navbar-marketing").removeClass("navbar-scrolled");
-        }
-    };
-    // Collapse now if page is not at top
-    navbarCollapse();
-    // Collapse the navbar when page is scrolled
-    $(window).scroll(navbarCollapse);
+    });
+
+    // range slider per il prezzo
+    var sliderPrice = document.getElementById('sliderPrice');
+
+    noUiSlider.create(sliderPrice, {
+        start: [0, 9999],
+        connect: true,
+        step: 1,
+        tooltips: true,
+        range: {
+            'min': 0,
+            '10%': 500,
+            '25%': 1000,
+            '45%': 1500,
+            '65%': 2000,
+            '85%': 3000,
+            'max': 9999
+        },
+        format: wNumb({
+            decimals: 0,
+            suffix: '$'
+        })
+    });
 
 
 })

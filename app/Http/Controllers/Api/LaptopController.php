@@ -57,25 +57,24 @@ class LaptopController extends Controller
 
         // restituisco solamente i risultati con il display size selezionato
         if ($displaySize = $request->get('display')){
-            $displaySize_array = explode(",", $displaySize); // displaysize è una stringa, uso explode per ottenere un array di 2 numeri
-            $display1 = floatval($displaySize_array[0]); // trasformo il valore in un integer
-            $display2 = floatval($displaySize_array[1]); // trasformo il valore in un integer
+            $display1 = floatval($displaySize[0]); // trasformo il valore in un float
+            $display2 = floatval($displaySize[1]); // trasformo il valore in un float
             $queryLaptop->whereBetween('display_size', [$display1, $display2]);
         }
 
         // restituisco solamente i risultati con il peso selezionato
         if ($laptop_weight = $request->get('mySliderWeight')) {
-            $laptop_weight_array = explode(",", $laptop_weight);
-            $laptop_weight_array_1 = intval($laptop_weight_array[0]);
-            $laptop_weight_array_2 = intval($laptop_weight_array[1]);
+//            $laptop_weight_array = explode(",", $laptop_weight);
+            $laptop_weight_array_1 = intval($laptop_weight[0]);
+            $laptop_weight_array_2 = intval($laptop_weight[1]);
             $queryLaptop->whereBetween('weight',[$laptop_weight_array_1, $laptop_weight_array_2]);
         }
 
         // restituisco solamente i risultati con il prezzo selezionato
         if ($price = $request->get('price')){
-            $price_array = explode(",", $price); // price è una stringa, uso explode per ottenere un array di 2 numeri
-            $price1 = intval($price_array[0]); // trasformo il valore in un integer
-            $price2 = intval($price_array[1]); // trasformo il valore in un integer
+//            $price_array = explode(",", $price); // price è una stringa, uso explode per ottenere un array di 2 numeri
+            $price1 = intval($price[0]); // trasformo il valore in un integer
+            $price2 = intval($price[1]); // trasformo il valore in un integer
             $queryLaptop->whereBetween('price', [$price1, $price2]);
         }
 

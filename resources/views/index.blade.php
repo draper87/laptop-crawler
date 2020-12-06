@@ -19,7 +19,7 @@
                         <form>
 
                             <div class="form-container">
-                                <div id="form-left" class="mt-1">
+                                <div id="form-left">
                                     <div class="mb-4">
                                         <select class="w-50 js-basic-single-videocard" name="video_card" id="videocard">
                                             <option></option>
@@ -72,33 +72,88 @@
                                         <span class="pr-2 pl-2">And better</span>
                                         <input id="rambettercheckbox" type="checkbox" id="ram_better" value="1" />
                                     </div>
+
+                                    <div>
+                                        <select class="w-50 js-basic-single-chassis" name="chassis" id="chassis">
+                                            <option></option>
+                                                <option value="premium">Premium (CNC Aluminium, Magnesium) </option>
+                                                <option value="mixed">Mixed (Aluminium and Plastic) </option>
+                                                <option value="plastic">Plastic</option>
+                                        </select>
+                                        <span class="pr-2 pl-2">And better</span>
+                                        <input id="chassisbettercheckbox" type="checkbox" name="chassisbetter" value="1" />
+                                    </div>
+
                                 </div>
                                 <div id="form-right">
 
-                                    <div>
-{{--                                        <label for="sliderdisplay">Display Size (inches)</label><input type="text" id="sliderdisplay" class="slider" hidden>--}}
+                                    <div class="mb-5">
                                         <h4 class="text-center text-white">Display size</h4>
-                                        <div id="slider">
-
-                                        </div>
-                                        <span id="slider-value"></span>
+                                        <div id="sliderDisplay" ></div>
                                     </div>
 
+                                    <div class="mb-5">
+                                        <h4 class="text-center text-white">Weight</h4>
+                                        <div id="sliderWeight"></div>
+                                    </div>
 
+                                    <div class="pt-3">
+                                        <h4 class="text-center text-white">Price</h4>
+                                        <div id="sliderPrice"></div>
+                                    </div>
 
-{{--                                    <div><label for="sliderweight">Weight (1 Kg = 2.2 lbs)</label><input type="text" id="sliderweight" class="slider" hidden></div>--}}
-
-{{--                                    <div><label for="sliderprice">Price Range (USD)</label><input type="text" id="sliderprice" class="slider" hidden></div>--}}
 
                                 </div>
                             </div>
 
-                            <div id="form-input" class="text-center">
+                            <div id="filters" class="mt-5">
+{{--                                <span>Per-key RGB</span>--}}
+{{--                                <span>Chassis temperature</span>--}}
+{{--                                <span>battery runtime</span>--}}
+
+                                <div class="moreSlider">
+
+                                    <div id="laptopNoise">
+                                        <div class="main">
+                                            <label for="panel_size" class="text-center">Laptop Noise (db)</label>
+                                            <input
+                                                type="range"
+                                                name="laptopNoise"
+                                                min="30"
+                                                max="65"
+                                                value="30"
+                                            >
+                                            <span class="rangeslider__tooltip" id ="range-tooltip-noise"></span>
+                                        </div>
+                                    </div>
+
+{{--                                    <div id="laptopTemperature">--}}
+{{--                                        <div class="main">--}}
+{{--                                            <label for="panel_size" class="text-center">Laptop Temperature (C°)</label>--}}
+{{--                                            <input--}}
+{{--                                                type="range"--}}
+{{--                                                name="laptopTemperature"--}}
+{{--                                                min="30"--}}
+{{--                                                max="65"--}}
+{{--                                                value="30"--}}
+{{--                                            >--}}
+{{--                                            <span class="rangeslider__tooltip" id ="range-tooltip-temperature"></span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+
+
+                                </div>
+
+                            </div>
+
+                            <div id="form-input" class="text-center mt-5">
+
+                                <button class="mr-5 mt-5 btn btn-teal btn-marketing rounded-pill lift lift-sm" id="moreFilters">More Filters</button>
+
                                 <input class="mt-5 btn btn-teal btn-marketing rounded-pill lift lift-sm" id="bottone" value="Search">
 
                                 <button class="ml-5 mt-5 btn btn-teal btn-marketing rounded-pill lift lift-sm" id="reset">Reset</button>
                             </div>
-
 
                         </form>
 
@@ -162,7 +217,7 @@
     </div>
 </script>
 
-<script src="js/nouislider.min.js"></script>
+
 
 
 

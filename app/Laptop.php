@@ -26,11 +26,11 @@ class Laptop extends Model
 
     // dichiaro la foreign key in quanto non ho creato la colonna "id" per la tabella videocards
     public function videocard() {
-        return $this->belongsTo('App\Videocard', 'videocard_name', 'name');
+        return $this->belongsTo(Videocard::class, 'videocard_name', 'name');
     }
     // dichiaro la foreign key in quanto non ho creato la colonna "id" per la tabella cpus
     public function cpu() {
-        return $this->belongsTo('App\Cpu', 'cpu_name', 'name');
+        return $this->belongsTo(Cpu::class, 'cpu_name', 'name');
     }
 
 }
